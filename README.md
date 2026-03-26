@@ -8,6 +8,8 @@
 
 [句子学习 Demo](https://reichen13.github.io/DictionaryByGPT4-Curriculum-Levels/study.html)
 
+[开发路线图](./ROADMAP.md)
+
 ## 项目简介
 
 这个仓库保留了原项目的单词内容与展示方式，但把学校阶段分层调整成更符合国内英语学习路径的正式课标分级。
@@ -59,6 +61,12 @@ python scripts/build_leveled_index.py
 - 可切换的浏览器 TTS 语音
 - 右侧点词查看分级
 - 生词本收藏
+
+当前开发状态：
+
+- 词书主站已经是可长期使用的正式课标分级版
+- 学习页已经完成最小可用 Demo
+- 下一阶段建议优先建设 lesson 导入和内容生产链，详见 [ROADMAP.md](./ROADMAP.md)
 
 如果在本地直接双击 HTML 文件时遇到数据加载问题，请启动一个静态服务器再访问，例如：
 
