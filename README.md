@@ -51,6 +51,15 @@ python scripts/build_leveled_index.py
 
 如果要体验“课标分级 + 视频句子学习”的简化版，请打开 [study.html](./study.html)。
 
+当前 demo 已包含：
+
+- 本地 lesson 视频播放
+- 逐句定位与单句循环
+- 预生成句子音频
+- 可切换的浏览器 TTS 语音
+- 右侧点词查看分级
+- 生词本收藏
+
 如果在本地直接双击 HTML 文件时遇到数据加载问题，请启动一个静态服务器再访问，例如：
 
 ```bash

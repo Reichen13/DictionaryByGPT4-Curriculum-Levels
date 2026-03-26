@@ -295,6 +295,41 @@
       font-size: 13px;
     }
 
+    .voice-settings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px dashed var(--line);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .voice-settings label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .voice-settings select,
+    .voice-settings input {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font: inherit;
+    }
+
+    .voice-hint {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
     .sentence-panel {
       padding: 18px 20px 20px;
     }
@@ -397,6 +432,64 @@
       border: 1px dashed var(--line);
     }
 
+    .word-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .word-action {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .word-action.is-on {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      color: var(--primary-ink);
+      font-weight: 700;
+    }
+
+    .wordbook {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .wordbook-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .wordbook-head strong {
+      font-size: 16px;
+    }
+
+    .wordbook-head button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      padding: 6px 10px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .wordbook-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     @media (max-width: 1200px) {
       .layout {
         grid-template-columns: 1fr;
@@ -463,6 +556,31 @@
             </label>
           </div>
 
+          <div class="voice-settings">
+            <label>
+              发音模式
+              <select id="voice-mode-select">
+                <option value="recorded" selected>预生成句子音频</option>
+                <option value="browser">浏览器 TTS</option>
+              </select>
+            </label>
+            <label>
+              浏览器语音
+              <select id="voice-select">
+                <option value="">正在加载语音...</option>
+              </select>
+            </label>
+            <label>
+              TTS 语速
+              <input id="voice-rate-range" type="range" min="0.75" max="1.2" step="0.05" value="0.95">
+            </label>
+            <label>
+              TTS 音高
+              <input id="voice-pitch-range" type="range" min="0.8" max="1.2" step="0.05" value="1">
+            </label>
+          </div>
+          <div class="voice-hint" id="voice-hint">提示：切到“浏览器 TTS”后，可以选择本机更自然的英文语音。不同浏览器可用声音不同，Edge / Chrome 通常会比当前机械音更顺。</div>
+
           <div class="timeline">
             <input id="timeline-range" type="range" min="0" max="1000" value="0">
             <div class="time-row">
@@ -487,6 +605,13 @@
           <div class="stage-badge">分级提示</div>
           <p>这里会显示当前句单词在课标分级中的位置，以及原词库里的简短释义摘录。</p>
         </div>
+        <section class="wordbook">
+          <div class="wordbook-head">
+            <strong>生词本</strong>
+            <button id="clear-wordbook-btn" type="button">清空</button>
+          </div>
+          <div id="wordbook-list" class="wordbook-list"></div>
+        </section>
         <div class="helper">
           <strong>这个 demo 适合后续继续扩展：</strong>
           <ul>
@@ -525,6 +650,13 @@
     const timelineRange = document.getElementById('timeline-range');
     const timeCurrentEl = document.getElementById('time-current');
     const timeTotalEl = document.getElementById('time-total');
+    const voiceModeSelect = document.getElementById('voice-mode-select');
+    const voiceSelect = document.getElementById('voice-select');
+    const voiceRateRange = document.getElementById('voice-rate-range');
+    const voicePitchRange = document.getElementById('voice-pitch-range');
+    const voiceHintEl = document.getElementById('voice-hint');
+    const wordbookListEl = document.getElementById('wordbook-list');
+    const clearWordbookBtn = document.getElementById('clear-wordbook-btn');
 
     let catalog = null;
     let wordLookup = null;
@@ -535,6 +667,11 @@
     let autoSentenceAudio = true;
     let rafId = null;
     let lastAnnouncedSentenceId = null;
+    let browserVoices = [];
+    let selectedWordKey = null;
+    let wordbook = [];
+
+    const STORAGE_KEY = 'study-demo-settings-v1';
 
     const normalizeWord = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
@@ -544,6 +681,27 @@
       const seconds = String(total % 60).padStart(2, '0');
       return `${minutes}:${seconds}`;
     };
+
+    function loadSettings() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveSettings() {
+      const payload = {
+        voiceMode: voiceModeSelect.value,
+        voiceName: voiceSelect.value,
+        voiceRate: voiceRateRange.value,
+        voicePitch: voicePitchRange.value,
+        autoSentenceAudio,
+        wordbook,
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
 
     function stageMeta(stageKey) {
       return catalog?.stages?.[stageKey] || { label: stageKey, accent: '#5a9174' };
@@ -629,38 +787,114 @@
         audio.pause();
         audio.currentTime = 0;
       });
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
     }
 
     function currentSentence() {
       return currentLesson?.sentences?.[currentSentenceIndex] || null;
     }
 
+    function selectedBrowserVoice() {
+      if (!browserVoices.length) return null;
+      const chosen = browserVoices.find((voice) => voice.name === voiceSelect.value);
+      return chosen || browserVoices[0] || null;
+    }
+
     function speakSentence(sentence) {
       if (!sentence) return;
       stopAllSentenceAudio();
-      const audio = lessonAudioMap.get(sentence.id);
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
+      if (voiceModeSelect.value === 'browser' && 'speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(sentence.en);
+        const voice = selectedBrowserVoice();
+        if (voice) {
+          utterance.voice = voice;
+          utterance.lang = voice.lang || 'en-US';
+        } else {
+          utterance.lang = 'en-US';
+        }
+        utterance.rate = Number(voiceRateRange.value);
+        utterance.pitch = Number(voicePitchRange.value);
+        utterance.volume = 1;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        const audio = lessonAudioMap.get(sentence.id);
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
       lastAnnouncedSentenceId = sentence.id;
     }
 
     function renderWordDetail(wordKey) {
+      selectedWordKey = wordKey;
       const entry = wordLookup[wordKey];
       if (!entry) {
         wordDetailEl.innerHTML = `
           <h3>${wordKey}</h3>
           <div class="stage-badge">未找到分级</div>
           <p>当前 demo 词库里还没有这个单词的说明。</p>
+          <div class="word-detail-actions">
+            <button type="button" class="word-action" data-toggle-wordbook="${wordKey}">加入生词本</button>
+          </div>
         `;
+        bindWordActions();
         return;
       }
       const meta = stageMeta(entry.level);
+      const inWordbook = wordbook.includes(wordKey);
       wordDetailEl.innerHTML = `
         <h3>${entry.word}</h3>
         <div class="stage-badge" style="background:${meta.accent}22;color:${meta.accent};border:1px solid ${meta.accent}44;">${meta.label}</div>
         <p>${entry.brief}</p>
+        <div class="word-detail-actions">
+          <button type="button" class="word-action ${inWordbook ? 'is-on' : ''}" data-toggle-wordbook="${wordKey}">
+            ${inWordbook ? '已加入生词本' : '加入生词本'}
+          </button>
+        </div>
       `;
+      bindWordActions();
+    }
+
+    function bindWordActions() {
+      wordDetailEl.querySelectorAll('[data-toggle-wordbook]').forEach((button) => {
+        button.addEventListener('click', () => {
+          toggleWordbook(button.dataset.toggleWordbook);
+        });
+      });
+    }
+
+    function renderWordbook() {
+      if (!wordbook.length) {
+        wordbookListEl.innerHTML = '<p style="margin:0;color:var(--muted);font-size:14px;">还没有收藏单词。点右侧词卡里的“加入生词本”即可保存。</p>';
+        return;
+      }
+      wordbookListEl.innerHTML = wordbook.map((wordKey) => {
+        const entry = wordLookup[wordKey];
+        const label = entry?.word || wordKey;
+        return `<button class="word-chip" data-wordbook-word="${wordKey}">${label}</button>`;
+      }).join('');
+
+      wordbookListEl.querySelectorAll('[data-wordbook-word]').forEach((button) => {
+        button.addEventListener('click', () => {
+          renderWordDetail(button.dataset.wordbookWord);
+        });
+      });
+    }
+
+    function toggleWordbook(wordKey) {
+      if (!wordKey) return;
+      if (wordbook.includes(wordKey)) {
+        wordbook = wordbook.filter((item) => item !== wordKey);
+      } else {
+        wordbook = [wordKey, ...wordbook];
+      }
+      renderWordbook();
+      if (selectedWordKey === wordKey) {
+        renderWordDetail(wordKey);
+      }
+      saveSettings();
     }
 
     function renderCurrentSentenceMeta() {
@@ -782,6 +1016,61 @@
       }
     }
 
+    function bestVoice(voices) {
+      const englishVoices = voices.filter((voice) => /^en/i.test(voice.lang || '') || /english/i.test(voice.name));
+      const candidates = englishVoices.length ? englishVoices : voices;
+      const score = (voice) => {
+        const name = `${voice.name} ${voice.lang}`.toLowerCase();
+        let points = 0;
+        if (name.includes('aria')) points += 9;
+        if (name.includes('jenny')) points += 8;
+        if (name.includes('guy')) points += 7;
+        if (name.includes('zira')) points += 5;
+        if (name.includes('google')) points += 6;
+        if (name.includes('natural')) points += 8;
+        if (name.includes('online')) points += 4;
+        if (name.includes('english')) points += 2;
+        if ((voice.lang || '').toLowerCase().startsWith('en-us')) points += 3;
+        return points;
+      };
+      return [...candidates].sort((a, b) => score(b) - score(a))[0] || null;
+    }
+
+    function renderVoiceOptions({ preferredName } = {}) {
+      if (!('speechSynthesis' in window)) {
+        voiceSelect.innerHTML = '<option value="">当前浏览器不支持 Web Speech API</option>';
+        voiceSelect.disabled = true;
+        voiceModeSelect.value = 'recorded';
+        voiceModeSelect.disabled = true;
+        voiceHintEl.textContent = '当前浏览器不支持浏览器 TTS，因此只能使用预生成句子音频。';
+        return;
+      }
+
+      browserVoices = window.speechSynthesis.getVoices();
+      const englishVoices = browserVoices.filter((voice) => /^en/i.test(voice.lang || '') || /english/i.test(voice.name));
+      const available = englishVoices.length ? englishVoices : browserVoices;
+      if (!available.length) {
+        voiceSelect.innerHTML = '<option value="">未找到可用语音，回退到预生成句子音频</option>';
+        voiceHintEl.textContent = '当前浏览器还没有返回可用 TTS 语音。你可以刷新页面，或继续使用预生成句子音频。';
+        return;
+      }
+
+      voiceSelect.disabled = false;
+      voiceModeSelect.disabled = false;
+      voiceSelect.innerHTML = available.map((voice) => `
+        <option value="${voice.name}">${voice.name} · ${voice.lang}</option>
+      `).join('');
+
+      const selected = available.find((voice) => voice.name === preferredName) || bestVoice(available) || available[0];
+      if (selected) {
+        voiceSelect.value = selected.name;
+      }
+      const best = bestVoice(available);
+      voiceHintEl.textContent = best
+        ? `已检测到浏览器语音。推荐先试：${best.name}（${best.lang}）。如果你在 Edge / Chrome 里装有更自然的英文语音，这里会直接显示。`
+        : '已检测到浏览器语音。你可以切到“浏览器 TTS”试不同的英文声音。';
+    }
+
     function seekToSentence(index, { autoplay = true, speak = false } = {}) {
       if (!currentLesson) return;
       const sentence = currentLesson.sentences[index];
@@ -823,10 +1112,29 @@
       if (!autoSentenceAudio) {
         stopAllSentenceAudio();
       }
+      saveSettings();
     });
 
     speedSelect.addEventListener('change', () => {
       video.playbackRate = Number(speedSelect.value);
+    });
+
+    voiceModeSelect.addEventListener('change', () => {
+      stopAllSentenceAudio();
+      saveSettings();
+    });
+
+    voiceSelect.addEventListener('change', saveSettings);
+    voiceRateRange.addEventListener('input', saveSettings);
+    voicePitchRange.addEventListener('input', saveSettings);
+
+    clearWordbookBtn.addEventListener('click', () => {
+      wordbook = [];
+      renderWordbook();
+      if (selectedWordKey) {
+        renderWordDetail(selectedWordKey);
+      }
+      saveSettings();
     });
 
     timelineRange.addEventListener('input', () => {
@@ -859,10 +1167,28 @@
     });
 
     async function init() {
+      const saved = loadSettings();
       const [catalogResp, lookupResp] = await Promise.all([fetch(catalogUrl), fetch(lookupUrl)]);
       catalog = await catalogResp.json();
       wordLookup = await lookupResp.json();
+      autoSentenceAudio = saved.autoSentenceAudio !== false;
+      autoAudioBtn.classList.toggle('is-on', autoSentenceAudio);
+      wordbook = Array.isArray(saved.wordbook) ? saved.wordbook.filter((word) => wordLookup[word]) : [];
+      if (saved.voiceMode === 'browser' || saved.voiceMode === 'recorded') {
+        voiceModeSelect.value = saved.voiceMode;
+      }
+      if (saved.voiceRate) {
+        voiceRateRange.value = saved.voiceRate;
+      }
+      if (saved.voicePitch) {
+        voicePitchRange.value = saved.voicePitch;
+      }
+      renderVoiceOptions({ preferredName: saved.voiceName });
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = () => renderVoiceOptions({ preferredName: voiceSelect.value || saved.voiceName });
+      }
       renderStats();
+      renderWordbook();
       loadLesson(catalog.lessons[0], { autoplay: false });
       startTicker();
     }
