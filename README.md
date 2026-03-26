@@ -10,6 +10,8 @@
 
 [开发路线图](./ROADMAP.md)
 
+[Superpowers 审视记录](./docs/superpowers-roadmap-review-2026-03-26.md)
+
 ## 项目简介
 
 这个仓库保留了原项目的单词内容与展示方式，但把学校阶段分层调整成更符合国内英语学习路径的正式课标分级。
