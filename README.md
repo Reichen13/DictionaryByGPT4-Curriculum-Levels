@@ -6,6 +6,8 @@
 
 [在线访问（GitHub Pages）](https://reichen13.github.io/DictionaryByGPT4-Curriculum-Levels/)
 
+[句子学习 Demo](https://reichen13.github.io/DictionaryByGPT4-Curriculum-Levels/study.html)
+
 ## 项目简介
 
 这个仓库保留了原项目的单词内容与展示方式，但把学校阶段分层调整成更符合国内英语学习路径的正式课标分级。
@@ -46,6 +48,14 @@ python scripts/build_leveled_index.py
 如果只是本地浏览，直接打开 [index.html](./index.html) 即可。
 
 如果是 GitHub Pages 部署，仓库根目录的 `index.html` 就是站点入口。
+
+如果要体验“课标分级 + 视频句子学习”的简化版，请打开 [study.html](./study.html)。
+
+如果在本地直接双击 HTML 文件时遇到数据加载问题，请启动一个静态服务器再访问，例如：
+
+```bash
+python -m http.server 8000
+```
 
 ## 来源与致谢
 

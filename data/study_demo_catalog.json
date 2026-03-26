@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "Curriculum Stage + Sentence Study Demo",
+    "stageCounts": {
+      "primary": 601,
+      "junior": 1172,
+      "senior": 1279,
+      "cet4": 1756,
+      "cet6": 1063,
+      "advanced": 263,
+      "extended": 1893
+    }
+  },
+  "stages": {
+    "primary": {
+      "label": "小学",
+      "accent": "#549270"
+    },
+    "junior": {
+      "label": "初中",
+      "accent": "#5ea27e"
+    },
+    "senior": {
+      "label": "高中",
+      "accent": "#6689bb"
+    },
+    "cet4": {
+      "label": "四级",
+      "accent": "#7c6db1"
+    },
+    "cet6": {
+      "label": "六级",
+      "accent": "#9063aa"
+    },
+    "advanced": {
+      "label": "更高阶",
+      "accent": "#765a8c"
+    },
+    "extended": {
+      "label": "扩展",
+      "accent": "#757c82"
+    }
+  },
+  "lessons": [
+    {
+      "id": "primary-school-morning",
+      "stage": "primary",
+      "stageLabel": "小学",
+      "title": "My School Morning",
+      "subtitle": "小学示范课",
+      "summary": "用小学阶段高频词做一个早晨上学场景练习。",
+      "duration": 17.861,
+      "video": "./media/study-demo/primary-school-morning/lesson.mp4",
+      "sentences": [
+        {
+          "id": "primary-school-morning-sentence-1",
+          "index": 0,
+          "en": "I walk to school with my best friend.",
+          "zh": "我和我最好的朋友走路去学校。",
+          "start": 0.0,
+          "end": 3.969,
+          "duration": 3.969,
+          "audio": "./media/study-demo/primary-school-morning/sentence-01.wav",
+          "tokens": [
+            "I",
+            "walk",
+            "to",
+            "school",
+            "with",
+            "my",
+            "best",
+            "friend"
+          ]
+        },
+        {
+          "id": "primary-school-morning-sentence-2",
+          "index": 1,
+          "en": "Our teacher opens the classroom at eight.",
+          "zh": "我们的老师八点打开教室。",
+          "start": 3.969,
+          "end": 8.003,
+          "duration": 4.034,
+          "audio": "./media/study-demo/primary-school-morning/sentence-02.wav",
+          "tokens": [
+            "Our",
+            "teacher",
+            "opens",
+            "the",
+            "classroom",
+            "at",
+            "eight"
+          ]
+        },
+        {
+          "id": "primary-school-morning-sentence-3",
+          "index": 2,
+          "en": "We read a short story and answer easy questions.",
+          "zh": "我们读一个小故事，并回答简单的问题。",
+          "start": 8.003,
+          "end": 12.742,
+          "duration": 4.739,
+          "audio": "./media/study-demo/primary-school-morning/sentence-03.wav",
+          "tokens": [
+            "We",
+            "read",
+            "a",
+            "short",
+            "story",
+            "and",
+            "answer",
+            "easy",
+            "questions"
+          ]
+        },
+        {
+          "id": "primary-school-morning-sentence-4",
+          "index": 3,
+          "en": "After class, we play basketball in the sun.",
+          "zh": "下课后，我们在阳光下打篮球。",
+          "start": 12.742,
+          "end": 17.861,
+          "duration": 5.119,
+          "audio": "./media/study-demo/primary-school-morning/sentence-04.wav",
+          "tokens": [
+            "After",
+            "class",
+            "we",
+            "play",
+            "basketball",
+            "in",
+            "the",
+            "sun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "junior-spring-city",
+      "stage": "junior",
+      "stageLabel": "初中",
+      "title": "Spring in the City",
+      "subtitle": "初中示范课",
+      "summary": "围绕天气、出行和周末计划做句子学习。",
+      "duration": 18.236,
+      "video": "./media/study-demo/junior-spring-city/lesson.mp4",
+      "sentences": [
+        {
+          "id": "junior-spring-city-sentence-1",
+          "index": 0,
+          "en": "The weather changes quickly in this city.",
+          "zh": "这座城市的天气变化很快。",
+          "start": 0.0,
+          "end": 3.989,
+          "duration": 3.989,
+          "audio": "./media/study-demo/junior-spring-city/sentence-01.wav",
+          "tokens": [
+            "The",
+            "weather",
+            "changes",
+            "quickly",
+            "in",
+            "this",
+            "city"
+          ]
+        },
+        {
+          "id": "junior-spring-city-sentence-2",
+          "index": 1,
+          "en": "I usually carry an umbrella in spring.",
+          "zh": "春天我通常会带一把伞。",
+          "start": 3.989,
+          "end": 8.258,
+          "duration": 4.269,
+          "audio": "./media/study-demo/junior-spring-city/sentence-02.wav",
+          "tokens": [
+            "I",
+            "usually",
+            "carry",
+            "an",
+            "umbrella",
+            "in",
+            "spring"
+          ]
+        },
+        {
+          "id": "junior-spring-city-sentence-3",
+          "index": 2,
+          "en": "My parents and I sometimes travel by underground.",
+          "zh": "我和父母有时乘地铁出行。",
+          "start": 8.258,
+          "end": 13.242,
+          "duration": 4.984,
+          "audio": "./media/study-demo/junior-spring-city/sentence-03.wav",
+          "tokens": [
+            "My",
+            "parents",
+            "and",
+            "I",
+            "sometimes",
+            "travel",
+            "by",
+            "underground"
+          ]
+        },
+        {
+          "id": "junior-spring-city-sentence-4",
+          "index": 3,
+          "en": "At night, we talk about our plans for the weekend.",
+          "zh": "到了晚上，我们会聊周末计划。",
+          "start": 13.242,
+          "end": 18.236,
+          "duration": 4.994,
+          "audio": "./media/study-demo/junior-spring-city/sentence-04.wav",
+          "tokens": [
+            "At",
+            "night",
+            "we",
+            "talk",
+            "about",
+            "our",
+            "plans",
+            "for",
+            "the",
+            "weekend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "senior-learning-doors",
+      "stage": "senior",
+      "stageLabel": "高中",
+      "title": "Learning Opens Doors",
+      "subtitle": "高中示范课",
+      "summary": "围绕学习习惯、自我成长和长期目标组织句子练习。",
+      "duration": 19.616,
+      "video": "./media/study-demo/senior-learning-doors/lesson.mp4",
+      "sentences": [
+        {
+          "id": "senior-learning-doors-sentence-1",
+          "index": 0,
+          "en": "Learning English gives us access to new ideas.",
+          "zh": "学习英语让我们接触到新的想法。",
+          "start": 0.0,
+          "end": 4.669,
+          "duration": 4.669,
+          "audio": "./media/study-demo/senior-learning-doors/sentence-01.wav",
+          "tokens": [
+            "Learning",
+            "English",
+            "gives",
+            "us",
+            "access",
+            "to",
+            "new",
+            "ideas"
+          ]
+        },
+        {
+          "id": "senior-learning-doors-sentence-2",
+          "index": 1,
+          "en": "A good habit can change your future step by step.",
+          "zh": "一个好习惯可以一步一步改变你的未来。",
+          "start": 4.669,
+          "end": 9.558,
+          "duration": 4.889,
+          "audio": "./media/study-demo/senior-learning-doors/sentence-02.wav",
+          "tokens": [
+            "A",
+            "good",
+            "habit",
+            "can",
+            "change",
+            "your",
+            "future",
+            "step",
+            "by",
+            "step"
+          ]
+        },
+        {
+          "id": "senior-learning-doors-sentence-3",
+          "index": 2,
+          "en": "Every challenge becomes smaller after steady practice.",
+          "zh": "经过稳定练习后，每个挑战都会变得更小。",
+          "start": 9.558,
+          "end": 14.527,
+          "duration": 4.969,
+          "audio": "./media/study-demo/senior-learning-doors/sentence-03.wav",
+          "tokens": [
+            "Every",
+            "challenge",
+            "becomes",
+            "smaller",
+            "after",
+            "steady",
+            "practice"
+          ]
+        },
+        {
+          "id": "senior-learning-doors-sentence-4",
+          "index": 3,
+          "en": "With patience, you can achieve more than you expect.",
+          "zh": "有了耐心，你能做到比预期更多的事情。",
+          "start": 14.527,
+          "end": 19.616,
+          "duration": 5.089,
+          "audio": "./media/study-demo/senior-learning-doors/sentence-04.wav",
+          "tokens": [
+            "With",
+            "patience",
+            "you",
+            "can",
+            "achieve",
+            "more",
+            "than",
+            "you",
+            "expect"
+          ]
+        }
+      ]
+    }
+  ]
+}
