@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "junior-river-cleanup",
+  "stage": "junior",
+  "title": "Cleaning the River Park",
+  "subtitle": "初中示范课",
+  "summary": "围绕环保、志愿活动和团队协作组织的初中句子练习。",
+  "displayOrder": 20,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["environment", "volunteer", "teamwork"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "Our class joins a weekend cleanup near the river park.",
+      "zh": "我们班参加了河边公园的周末清洁活动。"
+    },
+    {
+      "id": "s2",
+      "en": "Some students pick up bottles while others sort the waste.",
+      "zh": "一些学生捡瓶子，另一些学生分类垃圾。"
+    },
+    {
+      "id": "s3",
+      "en": "The guide explains why plastic is harmful to birds and fish.",
+      "zh": "向导解释了为什么塑料会伤害鸟类和鱼类。"
+    },
+    {
+      "id": "s4",
+      "en": "After the activity, we feel tired but proud of our work.",
+      "zh": "活动结束后，我们虽然很累，但为自己的工作感到自豪。"
+    }
+  ]
+}

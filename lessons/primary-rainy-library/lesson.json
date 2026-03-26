@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "primary-rainy-library",
+  "stage": "primary",
+  "title": "A Rainy Library Day",
+  "subtitle": "小学示范课",
+  "summary": "围绕下雨天、图书馆和阅读活动设计的基础句子练习。",
+  "displayOrder": 20,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["library", "rain", "reading"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "It is raining, so we go to the library after lunch.",
+      "zh": "正在下雨，所以我们午饭后去图书馆。"
+    },
+    {
+      "id": "s2",
+      "en": "My sister chooses a book about small animals.",
+      "zh": "我妹妹选了一本关于小动物的书。"
+    },
+    {
+      "id": "s3",
+      "en": "I sit by the window and read a funny story.",
+      "zh": "我坐在窗边，读一个有趣的故事。"
+    },
+    {
+      "id": "s4",
+      "en": "Before we leave, we say thank you to the librarian.",
+      "zh": "离开前，我们对图书管理员说谢谢。"
+    }
+  ]
+}

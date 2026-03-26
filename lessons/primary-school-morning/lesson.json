@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "primary-school-morning",
+  "stage": "primary",
+  "title": "My School Morning",
+  "subtitle": "小学示范课",
+  "summary": "用小学阶段高频词做一个早晨上学场景练习。",
+  "displayOrder": 10,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["school", "morning", "daily-life"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I walk to school with my best friend.",
+      "zh": "我和我最好的朋友走路去学校。"
+    },
+    {
+      "id": "s2",
+      "en": "Our teacher opens the classroom at eight.",
+      "zh": "我们的老师八点打开教室。"
+    },
+    {
+      "id": "s3",
+      "en": "We read a short story and answer easy questions.",
+      "zh": "我们读一个小故事，并回答简单的问题。"
+    },
+    {
+      "id": "s4",
+      "en": "After class, we play basketball in the sun.",
+      "zh": "下课后，我们在阳光下打篮球。"
+    }
+  ]
+}

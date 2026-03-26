@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "senior-digital-museum",
+  "stage": "senior",
+  "title": "A Visit to the Digital Museum",
+  "subtitle": "高中示范课",
+  "summary": "围绕科技展览、文化体验和批判性思考设计的高中句子练习。",
+  "displayOrder": 20,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["technology", "museum", "culture"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "The digital museum combines history with interactive technology.",
+      "zh": "数字博物馆把历史与互动技术结合在一起。"
+    },
+    {
+      "id": "s2",
+      "en": "We can examine ancient objects through detailed virtual models.",
+      "zh": "我们可以通过精细的虚拟模型观察古代文物。"
+    },
+    {
+      "id": "s3",
+      "en": "Our teacher encourages us to question how each story is presented.",
+      "zh": "老师鼓励我们思考每个故事是如何被呈现出来的。"
+    },
+    {
+      "id": "s4",
+      "en": "The visit reminds me that innovation can deepen cultural understanding.",
+      "zh": "这次参观提醒我，创新可以加深文化理解。"
+    }
+  ]
+}

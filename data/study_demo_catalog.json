@@ -135,6 +135,105 @@
       ]
     },
     {
+      "id": "primary-rainy-library",
+      "stage": "primary",
+      "stageLabel": "小学",
+      "title": "A Rainy Library Day",
+      "subtitle": "小学示范课",
+      "summary": "围绕下雨天、图书馆和阅读活动设计的基础句子练习。",
+      "duration": 19.326,
+      "video": "./media/study-demo/primary-rainy-library/lesson.mp4",
+      "sentences": [
+        {
+          "id": "primary-rainy-library-sentence-1",
+          "index": 0,
+          "en": "It is raining, so we go to the library after lunch.",
+          "zh": "正在下雨，所以我们午饭后去图书馆。",
+          "start": 0.0,
+          "end": 5.359,
+          "duration": 5.359,
+          "audio": "./media/study-demo/primary-rainy-library/sentence-01.wav",
+          "tokens": [
+            "It",
+            "is",
+            "raining",
+            "so",
+            "we",
+            "go",
+            "to",
+            "the",
+            "library",
+            "after",
+            "lunch"
+          ]
+        },
+        {
+          "id": "primary-rainy-library-sentence-2",
+          "index": 1,
+          "en": "My sister chooses a book about small animals.",
+          "zh": "我妹妹选了一本关于小动物的书。",
+          "start": 5.359,
+          "end": 9.938,
+          "duration": 4.579,
+          "audio": "./media/study-demo/primary-rainy-library/sentence-02.wav",
+          "tokens": [
+            "My",
+            "sister",
+            "chooses",
+            "a",
+            "book",
+            "about",
+            "small",
+            "animals"
+          ]
+        },
+        {
+          "id": "primary-rainy-library-sentence-3",
+          "index": 2,
+          "en": "I sit by the window and read a funny story.",
+          "zh": "我坐在窗边，读一个有趣的故事。",
+          "start": 9.938,
+          "end": 14.167,
+          "duration": 4.229,
+          "audio": "./media/study-demo/primary-rainy-library/sentence-03.wav",
+          "tokens": [
+            "I",
+            "sit",
+            "by",
+            "the",
+            "window",
+            "and",
+            "read",
+            "a",
+            "funny",
+            "story"
+          ]
+        },
+        {
+          "id": "primary-rainy-library-sentence-4",
+          "index": 3,
+          "en": "Before we leave, we say thank you to the librarian.",
+          "zh": "离开前，我们对图书管理员说谢谢。",
+          "start": 14.167,
+          "end": 19.326,
+          "duration": 5.159,
+          "audio": "./media/study-demo/primary-rainy-library/sentence-04.wav",
+          "tokens": [
+            "Before",
+            "we",
+            "leave",
+            "we",
+            "say",
+            "thank",
+            "you",
+            "to",
+            "the",
+            "librarian"
+          ]
+        }
+      ]
+    },
+    {
       "id": "junior-spring-city",
       "stage": "junior",
       "stageLabel": "初中",
@@ -222,6 +321,108 @@
             "for",
             "the",
             "weekend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "junior-river-cleanup",
+      "stage": "junior",
+      "stageLabel": "初中",
+      "title": "Cleaning the River Park",
+      "subtitle": "初中示范课",
+      "summary": "围绕环保、志愿活动和团队协作组织的初中句子练习。",
+      "duration": 21.196,
+      "video": "./media/study-demo/junior-river-cleanup/lesson.mp4",
+      "sentences": [
+        {
+          "id": "junior-river-cleanup-sentence-1",
+          "index": 0,
+          "en": "Our class joins a weekend cleanup near the river park.",
+          "zh": "我们班参加了河边公园的周末清洁活动。",
+          "start": 0.0,
+          "end": 4.999,
+          "duration": 4.999,
+          "audio": "./media/study-demo/junior-river-cleanup/sentence-01.wav",
+          "tokens": [
+            "Our",
+            "class",
+            "joins",
+            "a",
+            "weekend",
+            "cleanup",
+            "near",
+            "the",
+            "river",
+            "park"
+          ]
+        },
+        {
+          "id": "junior-river-cleanup-sentence-2",
+          "index": 1,
+          "en": "Some students pick up bottles while others sort the waste.",
+          "zh": "一些学生捡瓶子，另一些学生分类垃圾。",
+          "start": 4.999,
+          "end": 10.198,
+          "duration": 5.199,
+          "audio": "./media/study-demo/junior-river-cleanup/sentence-02.wav",
+          "tokens": [
+            "Some",
+            "students",
+            "pick",
+            "up",
+            "bottles",
+            "while",
+            "others",
+            "sort",
+            "the",
+            "waste"
+          ]
+        },
+        {
+          "id": "junior-river-cleanup-sentence-3",
+          "index": 2,
+          "en": "The guide explains why plastic is harmful to birds and fish.",
+          "zh": "向导解释了为什么塑料会伤害鸟类和鱼类。",
+          "start": 10.198,
+          "end": 15.612,
+          "duration": 5.414,
+          "audio": "./media/study-demo/junior-river-cleanup/sentence-03.wav",
+          "tokens": [
+            "The",
+            "guide",
+            "explains",
+            "why",
+            "plastic",
+            "is",
+            "harmful",
+            "to",
+            "birds",
+            "and",
+            "fish"
+          ]
+        },
+        {
+          "id": "junior-river-cleanup-sentence-4",
+          "index": 3,
+          "en": "After the activity, we feel tired but proud of our work.",
+          "zh": "活动结束后，我们虽然很累，但为自己的工作感到自豪。",
+          "start": 15.612,
+          "end": 21.196,
+          "duration": 5.584,
+          "audio": "./media/study-demo/junior-river-cleanup/sentence-04.wav",
+          "tokens": [
+            "After",
+            "the",
+            "activity",
+            "we",
+            "feel",
+            "tired",
+            "but",
+            "proud",
+            "of",
+            "our",
+            "work"
           ]
         }
       ]
@@ -316,6 +517,104 @@
             "than",
             "you",
             "expect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "senior-digital-museum",
+      "stage": "senior",
+      "stageLabel": "高中",
+      "title": "A Visit to the Digital Museum",
+      "subtitle": "高中示范课",
+      "summary": "围绕科技展览、文化体验和批判性思考设计的高中句子练习。",
+      "duration": 22.541,
+      "video": "./media/study-demo/senior-digital-museum/lesson.mp4",
+      "sentences": [
+        {
+          "id": "senior-digital-museum-sentence-1",
+          "index": 0,
+          "en": "The digital museum combines history with interactive technology.",
+          "zh": "数字博物馆把历史与互动技术结合在一起。",
+          "start": 0.0,
+          "end": 5.599,
+          "duration": 5.599,
+          "audio": "./media/study-demo/senior-digital-museum/sentence-01.wav",
+          "tokens": [
+            "The",
+            "digital",
+            "museum",
+            "combines",
+            "history",
+            "with",
+            "interactive",
+            "technology"
+          ]
+        },
+        {
+          "id": "senior-digital-museum-sentence-2",
+          "index": 1,
+          "en": "We can examine ancient objects through detailed virtual models.",
+          "zh": "我们可以通过精细的虚拟模型观察古代文物。",
+          "start": 5.599,
+          "end": 11.063,
+          "duration": 5.464,
+          "audio": "./media/study-demo/senior-digital-museum/sentence-02.wav",
+          "tokens": [
+            "We",
+            "can",
+            "examine",
+            "ancient",
+            "objects",
+            "through",
+            "detailed",
+            "virtual",
+            "models"
+          ]
+        },
+        {
+          "id": "senior-digital-museum-sentence-3",
+          "index": 2,
+          "en": "Our teacher encourages us to question how each story is presented.",
+          "zh": "老师鼓励我们思考每个故事是如何被呈现出来的。",
+          "start": 11.063,
+          "end": 16.732,
+          "duration": 5.669,
+          "audio": "./media/study-demo/senior-digital-museum/sentence-03.wav",
+          "tokens": [
+            "Our",
+            "teacher",
+            "encourages",
+            "us",
+            "to",
+            "question",
+            "how",
+            "each",
+            "story",
+            "is",
+            "presented"
+          ]
+        },
+        {
+          "id": "senior-digital-museum-sentence-4",
+          "index": 3,
+          "en": "The visit reminds me that innovation can deepen cultural understanding.",
+          "zh": "这次参观提醒我，创新可以加深文化理解。",
+          "start": 16.732,
+          "end": 22.541,
+          "duration": 5.809,
+          "audio": "./media/study-demo/senior-digital-museum/sentence-04.wav",
+          "tokens": [
+            "The",
+            "visit",
+            "reminds",
+            "me",
+            "that",
+            "innovation",
+            "can",
+            "deepen",
+            "cultural",
+            "understanding"
           ]
         }
       ]

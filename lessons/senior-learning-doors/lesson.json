@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "senior-learning-doors",
+  "stage": "senior",
+  "title": "Learning Opens Doors",
+  "subtitle": "高中示范课",
+  "summary": "围绕学习习惯、自我成长和长期目标组织句子练习。",
+  "displayOrder": 10,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["growth", "habit", "learning"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "Learning English gives us access to new ideas.",
+      "zh": "学习英语让我们接触到新的想法。"
+    },
+    {
+      "id": "s2",
+      "en": "A good habit can change your future step by step.",
+      "zh": "一个好习惯可以一步一步改变你的未来。"
+    },
+    {
+      "id": "s3",
+      "en": "Every challenge becomes smaller after steady practice.",
+      "zh": "经过稳定练习后，每个挑战都会变得更小。"
+    },
+    {
+      "id": "s4",
+      "en": "With patience, you can achieve more than you expect.",
+      "zh": "有了耐心，你能做到比预期更多的事情。"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "junior-spring-city",
+  "stage": "junior",
+  "title": "Spring in the City",
+  "subtitle": "初中示范课",
+  "summary": "围绕天气、出行和周末计划做句子学习。",
+  "displayOrder": 10,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "manual"
+  },
+  "tags": ["weather", "travel", "weekend"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "The weather changes quickly in this city.",
+      "zh": "这座城市的天气变化很快。"
+    },
+    {
+      "id": "s2",
+      "en": "I usually carry an umbrella in spring.",
+      "zh": "春天我通常会带一把伞。"
+    },
+    {
+      "id": "s3",
+      "en": "My parents and I sometimes travel by underground.",
+      "zh": "我和父母有时乘地铁出行。"
+    },
+    {
+      "id": "s4",
+      "en": "At night, we talk about our plans for the weekend.",
+      "zh": "到了晚上，我们会聊周末计划。"
+    }
+  ]
+}

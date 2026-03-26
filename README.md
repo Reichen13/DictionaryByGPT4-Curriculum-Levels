@@ -35,6 +35,8 @@
 - [index.html](./index.html)：分级后的网页版本
 - [word_levels.json](./word_levels.json)：单词到分级的映射结果
 - [gptwords.json](./gptwords.json)：原始单词内容数据
+- [lessons](./lessons)：学习页 lesson 源数据目录
+- [scripts/import_lessons.py](./scripts/import_lessons.py)：从 lesson 源文件生成学习页数据与媒体
 - [scripts/build_leveled_index.py](./scripts/build_leveled_index.py)：页面生成脚本
 - [scripts/extract_official_curriculum_vocab.py](./scripts/extract_official_curriculum_vocab.py)：义务教育阶段词表提取脚本
 - [scripts/extract_official_senior_high_vocab.py](./scripts/extract_official_senior_high_vocab.py)：高中阶段词表提取脚本
@@ -45,6 +47,7 @@
 python scripts/extract_official_curriculum_vocab.py
 python scripts/extract_official_senior_high_vocab.py
 python scripts/build_leveled_index.py
+python scripts/import_lessons.py
 ```
 
 ## 如何使用
@@ -57,12 +60,19 @@ python scripts/build_leveled_index.py
 
 当前 demo 已包含：
 
+- 基于 `lessons/*/lesson.json` 的 lesson 导入链路
 - 本地 lesson 视频播放
 - 逐句定位与单句循环
 - 预生成句子音频
 - 可切换的浏览器 TTS 语音
 - 右侧点词查看分级
 - 生词本收藏
+
+当前示例 lesson：
+
+- 小学 2 节
+- 初中 2 节
+- 高中 2 节
 
 当前开发状态：
 
