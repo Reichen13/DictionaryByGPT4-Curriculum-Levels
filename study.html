@@ -823,6 +823,7 @@
     let subtitleWordRanges = [];
     let renderedSubtitleSentenceId = null;
     let activeSubtitleDriver = null;
+    let skipNextPlayAutoSpeak = false;
 
     const STORAGE_KEY = 'study-demo-settings-v1';
 
@@ -1437,6 +1438,11 @@
 
     playBtn.addEventListener('click', () => {
       if (video.paused) {
+        if (autoSentenceAudio) {
+          skipNextPlayAutoSpeak = true;
+          lastAnnouncedSentenceId = null;
+          speakSentence(currentSentence());
+        }
         video.play().catch(() => {});
       } else {
         video.pause();
@@ -1507,6 +1513,10 @@
 
     video.addEventListener('play', () => {
       playBtn.textContent = '暂停';
+      if (skipNextPlayAutoSpeak) {
+        skipNextPlayAutoSpeak = false;
+        return;
+      }
       if (autoSentenceAudio) {
         speakSentence(currentSentence());
       }
