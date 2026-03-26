@@ -96,10 +96,27 @@
     }
 
     .stat-card {
+      width: 100%;
+      display: grid;
+      gap: 6px;
       padding: 16px;
       border-radius: 20px;
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 243, 233, 0.9));
+      text-align: left;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-1px);
+    }
+
+    .stat-card.is-active {
+      border-color: var(--primary);
+      background: linear-gradient(180deg, rgba(220, 236, 223, 0.96), rgba(255, 250, 241, 0.96));
     }
 
     .stat-card strong {
@@ -111,6 +128,12 @@
     .stat-card span {
       color: var(--muted);
       font-size: 13px;
+    }
+
+    .stat-card small {
+      color: var(--primary-ink);
+      font-size: 12px;
+      font-weight: 600;
     }
 
     .layout {
@@ -237,17 +260,124 @@
       white-space: nowrap;
     }
 
-    .video-shell {
+    .subtitle-stage {
+      position: relative;
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: #151b19;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(90, 145, 116, 0.26), transparent 28%),
+        linear-gradient(135deg, #214238 0%, #2f5d51 44%, #eef4f7 100%);
+      min-height: 320px;
+      padding: 24px;
+      display: grid;
     }
 
     video {
-      display: block;
+      position: absolute;
+      inset: 0;
       width: 100%;
-      background: #151b19;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    .subtitle-stage::after {
+      content: "";
+      position: absolute;
+      inset: auto 22px 22px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0));
+    }
+
+    .subtitle-layer {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-self: end;
+      gap: 14px;
+    }
+
+    .subtitle-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .subtitle-progress {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.24);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .subtitle-progress-fill {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #8fc2ff 0%, #4f86ff 55%, #2962e7 100%);
+      transition: width 90ms linear;
+    }
+
+    .subtitle-card {
+      display: grid;
+      gap: 12px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 252, 247, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      box-shadow: 0 18px 30px rgba(19, 39, 33, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .subtitle-en {
+      min-height: 92px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.35;
+      font-weight: 750;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle-word {
+      white-space: pre-wrap;
+    }
+
+    .subtitle-word--word {
+      --fill: 0%;
+      background: linear-gradient(90deg, #2f6ef3 0 var(--fill), rgba(28, 50, 73, 0.34) var(--fill) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      transition: background 90ms linear;
+    }
+
+    .subtitle-word--word.is-complete {
+      --fill: 100%;
+    }
+
+    .subtitle-word--punct {
+      color: rgba(34, 49, 44, 0.7);
+    }
+
+    .subtitle-zh {
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(34, 49, 44, 0.78);
+    }
+
+    .subtitle-tip {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
     }
 
     .control-row {
@@ -506,7 +636,7 @@
   <div class="page">
     <section class="hero panel">
       <h1>课标分级 + 视频句子学习</h1>
-      <p>这是一个最小可用的静态 demo：左侧按学段选 lesson，中间做“视频 + 逐句学习”，右侧做“点词看分级”。视频资源和句子音频全部来自仓库本地文件，适合继续扩展成真正的学习站。</p>
+      <p>这是一个最小可用的静态 demo：左侧按学段选 lesson，中间做“字幕舞台 + 逐句学习”，右侧做“点词看分级”。当前用本地 lesson 资源驱动时间轴和句子音频，适合继续扩展成真正的学习站。</p>
       <div class="hero-links">
         <a class="hero-link" href="./index.html">查看分级词书主页</a>
         <a class="hero-link" href="./README.md">查看项目说明</a>
@@ -530,12 +660,26 @@
             </div>
             <div style="color: var(--muted); text-align: right; font-size: 14px;">
               <div>示范模式</div>
-              <div>视频画面 + 逐句音频 + 点词提示</div>
+              <div>字幕舞台 + 逐句音频 + 点词提示</div>
             </div>
           </div>
 
-          <div class="video-shell">
+          <div class="subtitle-stage" id="subtitle-stage">
             <video id="lesson-video" muted playsinline preload="auto"></video>
+            <div class="subtitle-layer">
+              <div class="subtitle-topline">
+                <span id="subtitle-position">Sentence 1 / 1</span>
+                <span id="subtitle-mode">Recorded audio · 1.0x</span>
+              </div>
+              <div class="subtitle-progress" aria-hidden="true">
+                <span id="subtitle-progress-fill" class="subtitle-progress-fill"></span>
+              </div>
+              <div class="subtitle-card">
+                <div id="subtitle-en" class="subtitle-en" aria-live="polite"></div>
+                <div id="subtitle-zh" class="subtitle-zh"></div>
+              </div>
+              <div class="subtitle-tip">字幕会跟随当前播放进度推进，英文部分会按句内进度由浅变蓝。</div>
+            </div>
           </div>
 
           <div class="control-row">
@@ -636,6 +780,11 @@
     const lessonStageEl = document.getElementById('lesson-stage');
     const lessonTitleEl = document.getElementById('lesson-title');
     const lessonSummaryEl = document.getElementById('lesson-summary');
+    const subtitlePositionEl = document.getElementById('subtitle-position');
+    const subtitleModeEl = document.getElementById('subtitle-mode');
+    const subtitleProgressFillEl = document.getElementById('subtitle-progress-fill');
+    const subtitleEnEl = document.getElementById('subtitle-en');
+    const subtitleZhEl = document.getElementById('subtitle-zh');
     const currentTranslationEl = document.getElementById('current-translation');
     const wordBankEl = document.getElementById('word-bank');
     const wordDetailEl = document.getElementById('word-detail');
@@ -670,10 +819,23 @@
     let browserVoices = [];
     let selectedWordKey = null;
     let wordbook = [];
+    let subtitleWordSpans = [];
+    let subtitleWordRanges = [];
+    let renderedSubtitleSentenceId = null;
 
     const STORAGE_KEY = 'study-demo-settings-v1';
 
     const normalizeWord = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
 
     const formatTime = (value) => {
       const total = Math.max(0, Math.floor(value || 0));
@@ -681,6 +843,47 @@
       const seconds = String(total % 60).padStart(2, '0');
       return `${minutes}:${seconds}`;
     };
+
+    function firstLessonForStage(stageKey) {
+      return catalog?.lessons?.find((lesson) => lesson.stage === stageKey) || null;
+    }
+
+    function stageDictionaryHref(stageKey) {
+      return `./index.html#section-${stageKey}`;
+    }
+
+    function tokenizeSubtitleText(text) {
+      return String(text || '')
+        .split(/(\s+)/)
+        .filter(Boolean)
+        .flatMap((part) => {
+          if (/^\s+$/.test(part)) {
+            return [{ kind: 'space', text: part }];
+          }
+          return (part.match(/[A-Za-z0-9']+|[^A-Za-z0-9']+/g) || [part]).map((token) => ({
+            kind: /[A-Za-z0-9']/.test(token) ? 'word' : 'punct',
+            text: token,
+          }));
+        });
+    }
+
+    function buildWordRanges(parts) {
+      const wordParts = parts.filter((part) => part.kind === 'word');
+      const totalWeight = wordParts.reduce((sum, part) => sum + Math.max(1, part.text.replace(/[^A-Za-z0-9']/g, '').length), 0) || 1;
+      let cursor = 0;
+      return wordParts.map((part) => {
+        const weight = Math.max(1, part.text.replace(/[^A-Za-z0-9']/g, '').length);
+        const start = cursor / totalWeight;
+        cursor += weight;
+        return { start, end: cursor / totalWeight };
+      });
+    }
+
+    function currentSpeechRate() {
+      const baseRate = Number(voiceRateRange.value || 1);
+      const speedRate = Number(speedSelect.value || 1);
+      return clamp(baseRate * speedRate, 0.7, 1.8);
+    }
 
     function loadSettings() {
       try {
@@ -717,14 +920,30 @@
       statsEl.innerHTML = stagePriority
         .map((key) => {
           const meta = stageMeta(key);
+          const demoLesson = firstLessonForStage(key);
+          const actionLabel = demoLesson ? '打开该级示例 lesson' : '当前暂无示例 lesson，跳到对应词书';
           return `
-            <article class="stat-card">
+            <button type="button" class="stat-card ${currentLesson?.stage === key ? 'is-active' : ''}" data-stage="${key}">
               <strong>${meta.label}</strong>
               <span>${counts[key]} 个词条已归入这一层</span>
-            </article>
+              <small>${actionLabel}</small>
+            </button>
           `;
         })
         .join('');
+
+      statsEl.querySelectorAll('[data-stage]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const stageKey = button.dataset.stage;
+          const lesson = firstLessonForStage(stageKey);
+          if (lesson) {
+            loadLesson(lesson, { autoplay: false });
+            document.querySelector('.layout')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
+          window.location.href = stageDictionaryHref(stageKey);
+        });
+      });
     }
 
     function lessonsByStage() {
@@ -796,6 +1015,70 @@
       return currentLesson?.sentences?.[currentSentenceIndex] || null;
     }
 
+    function sentenceProgressAtTime(sentence, time) {
+      if (!sentence) return 0;
+      const duration = Math.max(0.001, sentence.end - sentence.start);
+      return clamp((time - sentence.start) / duration, 0, 1);
+    }
+
+    function renderSubtitleSentence() {
+      const sentence = currentSentence();
+      if (!sentence) {
+        subtitlePositionEl.textContent = 'Sentence 0 / 0';
+        subtitleZhEl.textContent = '';
+        subtitleEnEl.textContent = '';
+        subtitleProgressFillEl.style.width = '0%';
+        subtitleWordSpans = [];
+        subtitleWordRanges = [];
+        renderedSubtitleSentenceId = null;
+        return;
+      }
+
+      subtitlePositionEl.textContent = `Sentence ${currentSentenceIndex + 1} / ${currentLesson.sentences.length}`;
+      subtitleZhEl.textContent = sentence.zh;
+
+      if (renderedSubtitleSentenceId !== sentence.id) {
+        const parts = tokenizeSubtitleText(sentence.en);
+        let wordIndex = 0;
+        subtitleEnEl.innerHTML = parts.map((part) => {
+          if (part.kind === 'space') {
+            return `<span class="subtitle-word">${escapeHtml(part.text)}</span>`;
+          }
+          if (part.kind === 'punct') {
+            return `<span class="subtitle-word subtitle-word--punct">${escapeHtml(part.text)}</span>`;
+          }
+          const markup = `<span class="subtitle-word subtitle-word--word" data-subtitle-word-index="${wordIndex}">${escapeHtml(part.text)}</span>`;
+          wordIndex += 1;
+          return markup;
+        }).join('');
+        subtitleWordSpans = Array.from(subtitleEnEl.querySelectorAll('[data-subtitle-word-index]'));
+        subtitleWordRanges = buildWordRanges(parts);
+        renderedSubtitleSentenceId = sentence.id;
+      }
+
+      updateSubtitleProgress();
+    }
+
+    function updateSubtitleProgress() {
+      const sentence = currentSentence();
+      if (!sentence) return;
+
+      const progress = sentenceProgressAtTime(sentence, video.currentTime || 0);
+      subtitleProgressFillEl.style.width = `${(progress * 100).toFixed(1)}%`;
+
+      subtitleWordSpans.forEach((span, index) => {
+        const range = subtitleWordRanges[index] || { start: 0, end: 1 };
+        const fill = clamp((progress - range.start) / Math.max(0.001, range.end - range.start), 0, 1);
+        span.style.setProperty('--fill', `${(fill * 100).toFixed(1)}%`);
+        span.classList.toggle('is-complete', fill >= 0.999);
+      });
+    }
+
+    function updateSubtitleModeLabel() {
+      const voiceModeLabel = voiceModeSelect.value === 'browser' ? 'Browser TTS' : 'Recorded audio';
+      subtitleModeEl.textContent = `${voiceModeLabel} · ${Number(speedSelect.value).toFixed(2).replace(/\.00$/, '')}x`;
+    }
+
     function selectedBrowserVoice() {
       if (!browserVoices.length) return null;
       const chosen = browserVoices.find((voice) => voice.name === voiceSelect.value);
@@ -814,7 +1097,7 @@
         } else {
           utterance.lang = 'en-US';
         }
-        utterance.rate = Number(voiceRateRange.value);
+        utterance.rate = currentSpeechRate();
         utterance.pitch = Number(voicePitchRange.value);
         utterance.volume = 1;
         window.speechSynthesis.speak(utterance);
@@ -822,6 +1105,7 @@
         const audio = lessonAudioMap.get(sentence.id);
         if (!audio) return;
         audio.currentTime = 0;
+        audio.playbackRate = Number(speedSelect.value || 1);
         audio.play().catch(() => {});
       }
       lastAnnouncedSentenceId = sentence.id;
@@ -900,6 +1184,7 @@
     function renderCurrentSentenceMeta() {
       const sentence = currentSentence();
       if (!sentence) return;
+      renderSubtitleSentence();
       currentTranslationEl.textContent = sentence.zh;
       wordBankEl.innerHTML = sentence.tokens.map((token) => {
         const key = normalizeWord(token);
@@ -978,6 +1263,7 @@
         }
       }
 
+      updateSubtitleProgress();
       timelineRange.value = String(Math.round((time / Math.max(video.duration || currentLesson.duration, 0.001)) * 1000));
       timeCurrentEl.textContent = formatTime(time);
       timeTotalEl.textContent = formatTime(video.duration || currentLesson.duration);
@@ -1001,13 +1287,16 @@
       lessonStageEl.textContent = `${lesson.stageLabel} lesson`;
       lessonTitleEl.textContent = lesson.title;
       lessonSummaryEl.textContent = lesson.summary;
+      renderedSubtitleSentenceId = null;
       video.src = lesson.video;
       video.playbackRate = Number(speedSelect.value);
+      video.currentTime = 0;
       prepareLessonAudio(lesson);
+      renderStats();
       renderLessonGroups();
       renderSentences();
       renderCurrentSentenceMeta();
-      video.currentTime = 0;
+      updateSubtitleModeLabel();
       timeCurrentEl.textContent = '00:00';
       timeTotalEl.textContent = formatTime(lesson.duration);
       playBtn.textContent = '播放';
@@ -1117,15 +1406,24 @@
 
     speedSelect.addEventListener('change', () => {
       video.playbackRate = Number(speedSelect.value);
+      updateSubtitleModeLabel();
+      if (autoSentenceAudio && !video.paused) {
+        lastAnnouncedSentenceId = null;
+        speakSentence(currentSentence());
+      }
     });
 
     voiceModeSelect.addEventListener('change', () => {
       stopAllSentenceAudio();
+      updateSubtitleModeLabel();
       saveSettings();
     });
 
     voiceSelect.addEventListener('change', saveSettings);
-    voiceRateRange.addEventListener('input', saveSettings);
+    voiceRateRange.addEventListener('input', () => {
+      updateSubtitleModeLabel();
+      saveSettings();
+    });
     voicePitchRange.addEventListener('input', saveSettings);
 
     clearWordbookBtn.addEventListener('click', () => {
