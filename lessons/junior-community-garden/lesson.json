@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "junior-community-garden",
+  "stage": "junior",
+  "title": "The Community Garden",
+  "subtitle": "初中示范课",
+  "summary": "围绕社区活动、分工合作和植物观察的初中句子练习。",
+  "displayOrder": 30,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "csv-import",
+    "file": "sentences.csv"
+  },
+  "tags": ["community", "garden", "teamwork"]
+}

@@ -29,6 +29,11 @@
     "level": "primary",
     "brief": "\"after\" 一词大多作为介词使用，意为“在……之后”，也可以作为连词，意为“在……之后”，还可以作为副词，意为“然后”。此外，\"after\" 还可以用作形容词和动词。"
   },
+  "afternoon": {
+    "word": "afternoon",
+    "level": "primary",
+    "brief": "\"Afternoon\" 是一个时间相关的英文单词，指的是从正午（midday）过后到黄昏（dusk）之前的一段时间。在日常英文中，它主要用来表示一天中的下午时间。"
+  },
   "an": {
     "word": "an",
     "level": "extended",
@@ -54,10 +59,25 @@
     "level": "primary",
     "brief": "\"Answer\"是一个名词和动词，它的基本含义是回答或响应。也可以被用作一种解决方法或解答谜题的答案。"
   },
+  "apples": {
+    "word": "apples",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
+  "argues": {
+    "word": "argues",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "at": {
     "word": "at",
     "level": "primary",
     "brief": "**分析词义** \"At\"是一个英语预词，主要用于表示位置、时间、方式等方面的含义。在表达位置时，一般特指一个具体的地点，例如：at home（在家）；在表示时间上，表示某一特定的时间点，如：at 2 p.m.（下午两点）；在表示方式上，表示以……方式，如：at a high speed（以高速）。 **列举例句** 1. The meeting is at"
+  },
+  "bag": {
+    "word": "bag",
+    "level": "primary",
+    "brief": "**分析词义** \"bag\"主要有两种含义，一种是\"袋子\"，通常指一个可以装东西的容器，另一种解释是在口语中表示\"捕获\"或\"赢得\"。 **列举例句** 1. She rummaged in her bag for her keys. (她在包里翻找她的钥匙。) 2. They bagged three awards at the film festival."
   },
   "basketball": {
     "word": "basketball",
@@ -73,6 +93,11 @@
     "word": "before",
     "level": "primary",
     "brief": "## 分析词义 \"Before\"是一个非常常见的英语单词，它可以作为介词、副词或是连词使用。它的主要含义通常为\"在...之前\"，表示时间或空间上的优先或早于。 ## 列举例句 1. \"I go to bed before 11 pm every day.\"（我每天都会在晚上11点前上床睡觉。） 2. \"He came in before I left.\"（他"
+  },
+  "beside": {
+    "word": "beside",
+    "level": "primary",
+    "brief": "\"Beside\"是一个介词，主要有两种含义。一是表示\"在……旁边\"，用来描述物体的位置关系。二是\"与……相比\"，用来比较两种不同的事物。"
   },
   "best": {
     "word": "best",
@@ -99,6 +124,11 @@
     "level": "primary",
     "brief": "\"but\"是一个非常常见的英语连词。在不同的情境下，其释义有所不同。 * 作为连接词使用时，\"but\" 表示转折，相当于中文中的\"但是\"或\"然而\"。例如：\"I want to go out but it's raining\"（我想出去，但是外面正在下雨）。 * 在某些情况下，\"but\" 可以表示除了。例如：\"Nobody but you can solve"
   },
+  "buy": {
+    "word": "buy",
+    "level": "primary",
+    "brief": "\"Buy\"主要有两个基本含义：一是用金钱购买商品或服务；二是接受或相信某事情。例如，\"I buy a book.\"（我买了一本书）和 \"I don't buy your excuse.\" （我不相信你的借口）。"
+  },
   "by": {
     "word": "By",
     "level": "primary",
@@ -109,10 +139,20 @@
     "level": "primary",
     "brief": "\"Can\" 是多功能词，常用作情态动词，表示能力（能，会）或可能性（可以）; 另外也用作名词，表示罐头或者容器。"
   },
+  "cards": {
+    "word": "cards",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "carry": {
     "word": "carry",
     "level": "junior",
     "brief": "\"Carry\" 是一个英语动词，意思是“携带，带着”，也可以表示“运送，搬运”。具有物理携带和抽象意义上的承担等两种用法。"
+  },
+  "center": {
+    "word": "center",
+    "level": "junior",
+    "brief": "\"Center\" 这个英文单词一般是指位于事物中心的，也可指中心点、中心位置等，既可以做名词也可以做动词。例如：City center (城市中心)，Center of gravity (重心)."
   },
   "challenge": {
     "word": "challenge",
@@ -129,8 +169,18 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "choices": {
+    "word": "choices",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "chooses": {
     "word": "chooses",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
+  "cities": {
+    "word": "cities",
     "level": "extended",
     "brief": "No local explanation found yet."
   },
@@ -143,6 +193,11 @@
     "word": "class",
     "level": "primary",
     "brief": "\"Class\" 是一个英文名词，主要有以下三种常见含义： 1. 教室里的课，或一群学生； 2. 一个社会经济群体，类似于社会阶级； 3. 表示一类，种类的意思。"
+  },
+  "classmates": {
+    "word": "classmates",
+    "level": "extended",
+    "brief": "No local explanation found yet."
   },
   "classroom": {
     "word": "classroom",
@@ -159,10 +214,25 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "community": {
+    "word": "community",
+    "level": "junior",
+    "brief": "\"Community\"是一个英文名词，它一般用来描述一个共享某种共同事物（例如地域、信仰、兴趣等）的人群。"
+  },
+  "count": {
+    "word": "count",
+    "level": "junior",
+    "brief": "**词义分析:** \"Count\"原意是\"计数\"，既可作名词，也可作动词。当作名词时，它表示“计数，总数”。作为动词时，它表示\"算，计算，把...算作，看作\"。 **例句列举:** 1. Please count how many people are in the room. (请数一下房间里有多少人。) 2. The final count for th"
+  },
   "cultural": {
     "word": "cultural",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "debate": {
+    "word": "debate",
+    "level": "senior",
+    "brief": "分析词义 “Debate”是一个非常常见的英文单词，通常用作名词和动词。作为名词时，“debate”通常指代有组织的、公开的、一对一或团体间的关于某个主题的争论或讨论。常常会在政治、教育、宗教和其他很多公共议题中看到它。作为动词，“debate”则意在描述参与此类讨论或争论的动作。 列举例句 * The presidential debate was bro"
   },
   "deepen": {
     "word": "deepen",
@@ -174,10 +244,20 @@
     "level": "extended",
     "brief": "分析词义: \"Detailed\" 是一个形容词，意思是\"详细的，详尽的，精细的\"。它用来描述给出或展示大量小而重要事项的信息、作品或计划。 列举例句: 1. She gave me a very detailed description of the party. (她给我描述了非常详细的派对情况) 2. A detailed map will help u"
   },
+  "develop": {
+    "word": "develop",
+    "level": "junior",
+    "brief": "Develop是一个常用英语单词，它作为动词时，最主要的含义是“发展，进步，成长”。此外，它也可以表示\"研发，开发\"(比如开发产品)，\"培养\"(如培养兴趣)，\"显影\"(在摄影中)，\"逐渐产生\"(如疾病，症状等)。 在这里列举出几个例句： 1. We need to develop a marketing strategy for our new produc"
+  },
   "digital": {
     "word": "digital",
     "level": "junior",
     "brief": "英文单词\"digital\"源自拉丁语\"digitalis\"，意为\"指关的\"，从\"digitus\"演化而来，意为\"手指\"或\"趾头\"。这与我们用手指数数的概念相关。后来，\"digital\"在科技领域被广泛应用，用来描述那些用数字（尤其是二进制数字）表示的信息或系统。 词义分析： \"digital\"通常被用来描述那些与计算机技术和电子设备有关的事物。例如，\"dig"
+  },
+  "discussion": {
+    "word": "discussion",
+    "level": "cet4",
+    "brief": "**分析词义** \"Discussion\" 这个单词是英文名词，意思是 “讨论”，通常指的是关于某个主题的激烈的交谈或争论。 **例句** 1. We held a lengthy discussion about plans for the weekend.（我们就周末的计划进行了漫长的讨论。） 2. The discussion ended in a h"
   },
   "each": {
     "word": "each",
@@ -198,6 +278,16 @@
     "word": "encourages",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "end": {
+    "word": "end",
+    "level": "junior",
+    "brief": "分析词义: \"End\" 是一个英文单词，既可以做动词也可以做名词。作为名词，它的基本意思是 \"结束\" 或者 \"终点\"。作为动词，它表示 \"结束\" 或者 \"使…结束\"。 例如：end of the road（道路的尽头）；end a relationship（结束一段感情）。 列举例句: 1. This is the end of the story.（这是故"
+  },
+  "energy": {
+    "word": "energy",
+    "level": "junior",
+    "brief": "\"Energy\" 是一个名词，主要有两种含义，一个是指\"能量，动力\"，这涵盖了自然科学领域对于能量的定义，如热能、电能、动能等。另一个是用来形容某人充满活力，富有精力。例如：He doesn't have the energy to go out.（他没有精力出门。）"
   },
   "english": {
     "word": "English",
@@ -234,10 +324,25 @@
     "level": "primary",
     "brief": "**分析词义** \"Fish\" 是一个名词，通常指的是脊索动物中那些生活在水域中，并且具有鳃呼吸和鳍行动功能的物种。当 \"fish\" 作为动词使用时，意思是通过使用钩和线或者其他设备在水中捕捉鱼类。 **列举例句** 1. Salmon is a kind of fish. - 三文鱼是一种鱼。 2. I don't like to eat fish. -"
   },
+  "flower": {
+    "word": "flower",
+    "level": "primary",
+    "brief": "**词义解析** \"Flower\"一词主要有两个含义，它既可以作为名词，代指花或花朵，也可以作为动词，表示开花或进入最好的、最活跃的状态。 **例句** 1. She received a bouquet of flowers on her birthday.（她生日那天收到了一束花。） 2. The cherry trees flower in April"
+  },
+  "focus": {
+    "word": "focus",
+    "level": "junior",
+    "brief": "\"Focus\"在英文中有多种含义，最常见的含义是\"关注，专注\"，但也可以表示\"焦点，中心\"等。在光学领域，它也可以表示\"焦点，聚焦点\"。"
+  },
   "for": {
     "word": "for",
     "level": "primary",
     "brief": "\"For\" 是一个英文介词，根据上下文，其含义有很多种。常见的有以下几种：为了；对于；承担…责任等。"
+  },
+  "fresh": {
+    "word": "fresh",
+    "level": "junior",
+    "brief": "**分析词义** \"Fresh\"这个单词在英文中是一个形容词，最直接的意思是“新鲜的”，通常用来形容食物未被加工，原汁原味的状态。另一种常见的意义是\"新的\"或者\"未使用过的\"。它还可以用来形容清新的空气或者是尚无经验的新手。 **列举例句** 1. The apples are fresh from the farm. (这些苹果是刚从农场送过来的。) 2."
   },
   "friend": {
     "word": "friend",
@@ -253,6 +358,16 @@
     "word": "future",
     "level": "junior",
     "brief": "**词义分析** \"Future\" 是一个英语单词，作为名词，意思是\"未来\"、\"前程\"，作为形容词，意思是\"将来的\"、\"未来的\"。 **例句** 1. The future is uncertain.（未来是不确定的） 2. He dreams of a bright future.（他梦想着光明的前程） 3. She will be my future w"
+  },
+  "garden": {
+    "word": "garden",
+    "level": "primary",
+    "brief": "\"Garden\" 是一个英文单词，作为名词时，它的基本意思是 \"园子\"，特指一片用于种植花卉、蔬菜或果树的土地。同时也可以作为动词，意思是 \"进行园艺活动\"，既指绿化栽培装饰这一行为。"
+  },
+  "gardener": {
+    "word": "gardener",
+    "level": "cet4",
+    "brief": "\"Gardener\" 是一个英语名词，中文翻译为 \"园丁\" 或 \"园艺师\"。这个单词用来描述一种工作，就是照顾和经营花园或者公园之类的地方，保持植物的健康并确保其中的美学。"
   },
   "gives": {
     "word": "gives",
@@ -288,6 +403,11 @@
     "word": "history",
     "level": "junior",
     "brief": "**单词解析：History** * * * **词意分析：** “History” 是一个英文名词，意为 \"历史\"。他指的是过去发生的事情，特别是与人类社会和文明相关的事件和进程。 **例句：** 1. **He is reading a book on the history of the Civil War.** 他在阅读一本关于内战历史的书。 2."
+  },
+  "home": {
+    "word": "home",
+    "level": "primary",
+    "brief": "**分析词义：** \"Home\"是英语中最常见的单词之一，表示家，也可以指人生活、生存的地方。它既可以用作名词，也可以用作形容词或副词。 **例句：** 1. I left my home for college last year.（我去年离开家去上大学） 2. Home services have been proliferating due to th"
   },
   "how": {
     "word": "how",
@@ -334,6 +454,11 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "kind": {
+    "word": "kind",
+    "level": "primary",
+    "brief": "分析词义： \"Kind\"是一个形容词，表示具有友好、仁慈、乐于助人的性质或品质。此外，\"kind\"作为名词，代表类型或种类。 列举例句： 1. Be kind to others. (对他人要和善。) 2. This is a different kind of music. (这是另一种类型的音乐。) 3. Kind words can warm wint"
+  },
   "learning": {
     "word": "learning",
     "level": "cet4",
@@ -374,15 +499,30 @@
     "level": "junior",
     "brief": "\"More\" 是一个英语单词，常用作副词或形容词，表示\"更多的\"或\"附加的\"。"
   },
+  "mother": {
+    "word": "mother",
+    "level": "primary",
+    "brief": "\"Mother\" 是一个英文名词，意思是“母亲”，在英语环境中是对已经生育过孩子的女性的称呼，也可以指任何的女性照顾者或被仰视的女性人物。"
+  },
   "museum": {
     "word": "museum",
     "level": "junior",
     "brief": "**词义分析**： \"Museum\" 是英文中的一个名词，中文为\"博物馆\"。一个博物馆通常是一个用于展示具有历史、艺术、科学等重要性的物品的地方。 **例句**： 1. The museum opens to the public every day except Monday. （除了星期一，博物馆每天都对公众开放。） 2. This museum hou"
   },
+  "must": {
+    "word": "must",
+    "level": "primary",
+    "brief": "\"Must\" 是一个重要的助动词，主要用来表示必要性、确定性或者強迫性。"
+  },
   "my": {
     "word": "my",
     "level": "primary",
     "brief": "\"My\"在英语中是个人代词，用来指代说话人所拥有或者与之相关的人或物。它的用法和中文的\"我的\"非常接近。"
+  },
+  "name": {
+    "word": "name",
+    "level": "primary",
+    "brief": "\"Name\"这个单词在英语中主要有两个基本的意思，作为名词，它表示\"名字\"或者\"名称\"；当它作为动词时，它的意思是\"命名\"或者\"称呼\"。"
   },
   "near": {
     "word": "near",
@@ -409,10 +549,30 @@
     "level": "primary",
     "brief": "## 分析词义 \"Of\"是一种英文介词，非常常见。它的基本含义是表示\"来自\"、\"属于\"或\"关于\"，但它在各种短语中的用途非常广泛，意思也因语境有所变化。但它的核心含义始终为表示某种关联或者关系。 ## 列举例句 * \"The Queen of England.\"（英格兰的皇后。）：此处“of”表示\"属于\"或\"来自\"的意思。 * \"A slice of piz"
   },
+  "old": {
+    "word": "old",
+    "level": "primary",
+    "brief": "**分析词义** 英文单词 \"old\" 是形容词，直接翻译为中文是“旧的”或“老的”，它用来描述年纪大、时间长久或者以前、过去的事情。 **列举例句** 1. I live in an old house. 我住在一栋旧房子里。 2. He's an old friend of mine. 他是我多年的好友。 3. I like listening to o"
+  },
+  "on": {
+    "word": "on",
+    "level": "primary",
+    "brief": "\"On\" 是一个英语介词，主要有以下几种含义： 1. 表示某物在某物之上并接触； 2. 指示日期、天、年等时间； 3. 表示状态、行为或活动的进行。"
+  },
+  "one": {
+    "word": "one",
+    "level": "primary",
+    "brief": "**词义分析：** \"one\" 最常见的含义是表示数字\"1\"，同时它也被用作代词，指代某一已提到或已知的人或物。当\"one\"用作代词时，它指的是一般的、抽象的人，而不是特指某个人。 **例句：** 1. I only have one apple.（我只有一个苹果。） 2. One must always tell the truth.（人必须始终说实话。）"
+  },
   "opens": {
     "word": "opens",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "orange": {
+    "word": "orange",
+    "level": "primary",
+    "brief": "分析词义： \"Orange\" 在英语中主要有两层含义。一是指的是橙色，是红色和黄色结合在一起的颜色。二是指橙子，一种常见的水果，富含维生素C。 列举例句： 1. This is my orange scarf. (这是我的橙色围巾。) 2. The sunset turns the sky into a beautiful shade of orange."
   },
   "others": {
     "word": "others",
@@ -449,6 +609,11 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "plants": {
+    "word": "plants",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "plastic": {
     "word": "plastic",
     "level": "junior",
@@ -459,15 +624,35 @@
     "level": "primary",
     "brief": "\"Play\"是一个非常多元的词，在英语中它可以表示动词“玩”，“播放”或“演奏”，也可以作为名词表示“戏剧”，“游戏”等。"
   },
+  "policy": {
+    "word": "policy",
+    "level": "senior",
+    "brief": "\"Policy\" 是一个名词，有两个主要的意思： 1. 政策，策略；一种行为、行动或协议的指导原则； 2. 保险单"
+  },
+  "power": {
+    "word": "power",
+    "level": "junior",
+    "brief": "\"Power\" 这个词在中文中主要有两个含义，一个是 \"权力\" 或 \"控制能力\"，另一个是 \"能量\" 或 \"力量\"。比如，\"The president has the power to veto laws.\" (\"总统有权否决法律。\") ，或者 \"This engine has a lot of power.\" (\"这个引擎有很大的动力。\")。"
+  },
   "practice": {
     "word": "practice",
     "level": "junior",
     "brief": "Practice 本身有许多含义，主要可以解释为\"实践\"、\"练习\"或\"习惯\"。作为动词，它指的是经常做某事或经常进行某事以提高技能或为了达到目标（例如练习英语或练习钢琴）。作为名词，\"practice\"可以指的是做某事的方法或者习惯等。"
   },
+  "preparing": {
+    "word": "preparing",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "presented": {
     "word": "presented",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "pressure": {
+    "word": "pressure",
+    "level": "junior",
+    "brief": "\"Pressure\"这个词在英语中有几个不同的含义。它最常见的含义是 \"压力\"或\"压强\"，可以是物理的，比如气压或水压，更多的是用在心理压力的场景下。同时，它也可以用来表示强行说服或驱使别人做某事，比如施加压力。"
   },
   "proud": {
     "word": "proud",
@@ -499,6 +684,11 @@
     "level": "primary",
     "brief": "\"Read\" 是一个常见的英语动词，本义是\"阅读\"，用来指读书、报纸、字母、词汇、句子等含有文字的内容。此外，它还有扩展的意思，如\"了解\"，\"识别\"等。"
   },
+  "reduce": {
+    "word": "reduce",
+    "level": "junior",
+    "brief": "**分析词义** 英语单词 \"reduce\" 的基本含义为 \"减少\" 或 \"缩小\", 它用于表示在数量、规模、价值等方面的减小或减轻。 **列举例句** 1. \"I have made an effort to reduce my carbon footprint.\"（我尽力减少了我自己的碳足迹）。 2. \"We need to reduce waste t"
+  },
   "reminds": {
     "word": "reminds",
     "level": "extended",
@@ -509,6 +699,16 @@
     "level": "primary",
     "brief": "\"River\" 是英文中的一个常用单词，中文意思是“河流”。它指的是自然界中的大型水体，向某个方向流动，最终流入大海、湖泊或其他河流。"
   },
+  "same": {
+    "word": "same",
+    "level": "junior",
+    "brief": "分析词义： \"Same\" 是一个形容词或代词，意思是“相同的”，能够用来指代两个或更多的人或事物在一些方面的相似性或一样，如性质，身份，状况等。 例句： 1. We are in the same class. (我们在同一个班级。) 2. They come from the same city. (他们来自同一个城市。) 3. I have the sa"
+  },
+  "saturday": {
+    "word": "Saturday",
+    "level": "primary",
+    "brief": "\"Saturday\" 翻译为中文，是星期六的意思，是一周中的第六天。"
+  },
   "say": {
     "word": "say",
     "level": "primary",
@@ -518,6 +718,11 @@
     "word": "school",
     "level": "primary",
     "brief": "## 分析词义 \"School\"通常用来指代一个教育机构，例如小学，中学或者是大学。同时，\"school\" 也可以作为动词来表示教导或者培训的意思。 ## 列举例句 * Mary's children go to the school down the street. (玛丽的孩子们在街头上的那所学校上课。) * I have to go back to s"
+  },
+  "shopkeeper": {
+    "word": "shopkeeper",
+    "level": "cet4",
+    "brief": "\"Shopkeeper\"是一个名词，是指拥有或管理一个小商店的人，类似于我们中文中的\"店主\"或\"店铺老板\"。"
   },
   "short": {
     "word": "short",
@@ -549,6 +754,11 @@
     "level": "primary",
     "brief": "**分析词义** \"So\"是一个常用的英语单词，在许多情况下，它可以作为连词、副词、形容词或介词。 1. 当作为连词使用时，\"so\" 可以表示结果、原因等，如 \"I was tired, so I went to bed\"（我累了，所以我去睡觉了）。 2. 当作为副词使用时，\"so\" 可以表示程度或强调，如 \"I love you so much\"（我非常爱"
   },
+  "solar": {
+    "word": "solar",
+    "level": "senior",
+    "brief": "* \"Solar\" 是一个英文形容词，直译为“太阳的”，通常用来形容与太阳或太阳能有关的。比如，\"solar energy\"（太阳能）是以太阳为能源的能源类型。"
+  },
   "some": {
     "word": "some",
     "level": "primary",
@@ -563,6 +773,16 @@
     "word": "sort",
     "level": "senior",
     "brief": "\"Sort\" 是个英文单词，常常被用作名词或者动词。作为名词，它的主要意思是种类或类型，比如 \"this sort of things\" 则意味着\"这种东西\"。作为动词时，它主要意思是分类或整理，比如你可以\"sort your clothes\"，意味着\"整理你的衣服\"。"
+  },
+  "speech": {
+    "word": "speech",
+    "level": "junior",
+    "brief": "\"Speech\" 是一个名词，主要用来指\"对于公众所做的形式演讲\"。在扩大范围的语境中，\"speech\" 可以指代\"人类语言的能力\"，或者简单的\"谈话\"。"
+  },
+  "sports": {
+    "word": "sports",
+    "level": "extended",
+    "brief": "No local explanation found yet."
   },
   "spring": {
     "word": "spring",
@@ -584,6 +804,11 @@
     "level": "primary",
     "brief": "## 分析词义 \"Story\" 是一个英文名词，常被用来指述说，讲述或者编写的一个事件或一系列事情的描述或者报告。例子如：a love story (爱情故事)，a success story (成功的故事)，tell a story (讲故事)等。 ## 列举例句 1. \"Every picture tells a story.\" 中文翻译：每一张图片都有"
   },
+  "student": {
+    "word": "student",
+    "level": "primary",
+    "brief": "\"Student\"是一个名词，指的是在学校、学院或大学学习的人。在更广泛的意义上，\"student\"也可以指任何愿意学习、热衷于获取新知识的人。"
+  },
   "students": {
     "word": "students",
     "level": "extended",
@@ -594,6 +819,11 @@
     "level": "primary",
     "brief": "**分析词义** \"Sun\" 是空中照耀我们的大明星，也就是我们行星系的中心。它是一个中性名词。 **例句** 1. The sun rises in the east and sets in the west. （太阳从东方升起，从西方落下。） 2. The sun is the center of our solar system. （太阳是我们太阳系的"
   },
+  "sunlight": {
+    "word": "sunlight",
+    "level": "cet4",
+    "brief": "\"Sunlight\" 是一个英语单词，指的是太阳发出的光线，也就是我们熟知的阳光。"
+  },
   "talk": {
     "word": "talk",
     "level": "primary",
@@ -603,6 +833,16 @@
     "word": "teacher",
     "level": "primary",
     "brief": "**分析词义** \"Teacher\"是英语中的一个基本词汇，意为“教师”或“教育工作者”，是指在学校、学院或大学教授学生知识、技能的人。教师的角色包括提供教育指南、指导学生在学术、道德和人格素质等方面的成长。 **例句** 1. Mr. Smith is my English teacher. (史密斯先生是我的英语老师) 2. The teacher pr"
+  },
+  "teaches": {
+    "word": "teaches",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
+  "team": {
+    "word": "team",
+    "level": "junior",
+    "brief": "## 分析词义 “Team”是一个英文名词，通常指的是大约两个或更多的人，他们协作共同实施任务。这个词可以用于描述一组共享或追求共同目标的人。 ## 列举例句 1. Our team is working on the project.（我们的团队正在进行这个项目。） 2. He is a member of the basketball team.（他是篮"
   },
   "technology": {
     "word": "technology",
@@ -629,6 +869,11 @@
     "level": "primary",
     "brief": "\"The\"是英语中最常用的冠词，用于特指某个（些）已知的人或物。在名词前面使用，代表所谈论的人或物已经被提及过，或者在上下文环境中已被认知。"
   },
+  "them": {
+    "word": "them",
+    "level": "primary",
+    "brief": "\"Them\" 是英语中的一个代词，主要用于指代多人或多物，相当于汉语中的“他们/她们/它们”。"
+  },
   "this": {
     "word": "this",
     "level": "primary",
@@ -639,6 +884,11 @@
     "level": "junior",
     "brief": "\"Through\" 主要有三个意思： 1. 表示\"穿过\"，例如，穿过一个隧道、穿越一个国家； 2. 表示\"由于\"，比如通过努力获得成功； 3. 表示\"运行在整个时间或阶段\"，例如整天。"
   },
+  "time": {
+    "word": "time",
+    "level": "primary",
+    "brief": "\"Time\" 是英语单词，其基本含义为时间。"
+  },
   "tired": {
     "word": "tired",
     "level": "primary",
@@ -648,6 +898,16 @@
     "word": "To",
     "level": "primary",
     "brief": "\"To\"是英语中常用的介词之一，常常用于表示方向、传递、比较等。例如，“Go to school”其中的\"to\"表示去学校的方向；\"Give it to me\"中的\"to\"表示把东西传给我。"
+  },
+  "together": {
+    "word": "together",
+    "level": "junior",
+    "brief": "\"Together\" 是个副词，用于描述两个或更多的人或事物相互结合、在一起或同步进行的状态。它表示集体行动或一个整体的思想。"
+  },
+  "tomatoes": {
+    "word": "tomatoes",
+    "level": "extended",
+    "brief": "No local explanation found yet."
   },
   "travel": {
     "word": "travel",
@@ -704,6 +964,11 @@
     "level": "junior",
     "brief": "**分析词义** \"Waste\" 作为动词时，意为“浪费”，如浪费时间、金钱等；作为名词时，表示“废物”或“垃圾”，泛指不需要或不能使用的物质。 **列举例句** 1. Do not waste your time on trivial matters. (不要在琐事上浪费你的时间。) 2. The company has a system for safe"
   },
+  "water": {
+    "word": "water",
+    "level": "primary",
+    "brief": "\"Water\" 是英语单词，表达的是一个常用名词，意思是\"水\"。"
+  },
   "we": {
     "word": "we",
     "level": "primary",
@@ -743,6 +1008,11 @@
     "word": "work",
     "level": "primary",
     "brief": "\"Work\"通常作为名词和动词使用。作为名词，它指的是人们为了赚取生活所必需的工作，或者指一项特定的任务、任务、项目或任务。作为动词，它有多个意思，包括执行有体力或脑力的任务，或使一件事情发生或起作用。"
+  },
+  "write": {
+    "word": "write",
+    "level": "primary",
+    "brief": "\"Write\"这个单词是一个动词，是指在纸上、电脑或者其他介质上用文字记录下来，可以是信、文章、书、诗等等。它的基本含义是\"写\"。"
   },
   "you": {
     "word": "you",

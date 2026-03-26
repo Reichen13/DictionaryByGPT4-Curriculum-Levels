@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 import re
 import shutil
@@ -249,6 +250,86 @@ def validate_lesson_source(lesson: dict[str, Any], lesson_dir: Path) -> None:
             previous_end = end
 
 
+def optional_float(value: str | None) -> float | None:
+    if value is None:
+        return None
+    stripped = str(value).strip()
+    if not stripped:
+        return None
+    return float(stripped)
+
+
+def load_csv_sentences(lesson_dir: Path, source: dict[str, Any]) -> list[dict[str, Any]]:
+    source_file = source.get("file")
+    if not source_file:
+        raise ValueError(f"{lesson_dir / 'lesson.json'} csv-import source must include file")
+
+    csv_path = lesson_dir / source_file
+    if not csv_path.exists():
+        raise FileNotFoundError(f"CSV source not found: {csv_path}")
+
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        fieldnames = reader.fieldnames or []
+        required_columns = {"id", "en", "zh"}
+        missing_columns = sorted(required_columns - set(fieldnames))
+        if missing_columns:
+            raise ValueError(f"{csv_path} missing required columns: {', '.join(missing_columns)}")
+
+        sentences: list[dict[str, Any]] = []
+        for row_index, row in enumerate(reader, start=2):
+            sentence_id = (row.get("id") or "").strip()
+            en = (row.get("en") or "").strip()
+            zh = (row.get("zh") or "").strip()
+            if not sentence_id or not en or not zh:
+                raise ValueError(f"{csv_path} row {row_index} must include non-empty id, en, zh")
+
+            sentence: dict[str, Any] = {
+                "id": sentence_id,
+                "en": en,
+                "zh": zh,
+            }
+
+            start = optional_float(row.get("start"))
+            end = optional_float(row.get("end"))
+            if start is not None:
+                sentence["start"] = start
+            if end is not None:
+                sentence["end"] = end
+
+            audio = (row.get("audio") or "").strip()
+            if audio:
+                sentence["audio"] = audio
+
+            tokens = (row.get("tokens") or "").strip()
+            if tokens:
+                sentence["tokens"] = [part.strip() for part in re.split(r"[|,]", tokens) if part.strip()]
+
+            notes = (row.get("notes") or "").strip()
+            if notes:
+                sentence["notes"] = notes
+
+            sentences.append(sentence)
+
+    if not sentences:
+        raise ValueError(f"{csv_path} does not contain any sentence rows")
+    return sentences
+
+
+def materialize_lesson_source(lesson: dict[str, Any], lesson_dir: Path) -> dict[str, Any]:
+    source = lesson.get("source") or {"type": "manual"}
+    source_type = source.get("type", "manual")
+    materialized = dict(lesson)
+
+    if source_type == "manual":
+        return materialized
+    if source_type == "csv-import":
+        materialized["sentences"] = load_csv_sentences(lesson_dir, source)
+        return materialized
+
+    raise ValueError(f"{lesson_dir / 'lesson.json'} has unsupported source.type: {source_type}")
+
+
 def load_lesson_sources() -> list[tuple[Path, dict[str, Any]]]:
     if not LESSONS_DIR.exists():
         raise FileNotFoundError(f"Lesson source directory not found: {LESSONS_DIR}")
@@ -261,6 +342,7 @@ def load_lesson_sources() -> list[tuple[Path, dict[str, Any]]]:
     for lesson_file in lesson_files:
         lesson_dir = lesson_file.parent
         lesson = json.loads(lesson_file.read_text(encoding="utf-8"))
+        lesson = materialize_lesson_source(lesson, lesson_dir)
         validate_lesson_source(lesson, lesson_dir)
         loaded.append((lesson_dir, lesson))
 

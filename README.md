@@ -61,6 +61,7 @@ python scripts/import_lessons.py
 当前 demo 已包含：
 
 - 基于 `lessons/*/lesson.json` 的 lesson 导入链路
+- 支持 `manual` 和 `csv-import` 两种 lesson 源格式
 - 本地 lesson 视频播放
 - 逐句定位与单句循环
 - 预生成句子音频
@@ -70,9 +71,16 @@ python scripts/import_lessons.py
 
 当前示例 lesson：
 
-- 小学 2 节
-- 初中 2 节
-- 高中 2 节
+- 小学 3 节
+- 初中 3 节
+- 高中 3 节
+
+lesson 源格式补充：
+
+- `manual`：直接在 `lesson.json` 里写 `sentences`
+- `csv-import`：在 `lesson.json` 中声明 `source.type = "csv-import"` 和 `source.file`
+- 当前 CSV 至少支持列：`id,en,zh`
+- 可选 CSV 列：`start,end,audio,tokens,notes`
 
 当前开发状态：
 

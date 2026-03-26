@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "primary-weekend-market",
+  "stage": "primary",
+  "title": "A Weekend Market",
+  "subtitle": "小学示范课",
+  "summary": "围绕家庭买菜和颜色、数量表达的小学句子练习。",
+  "displayOrder": 30,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "csv-import",
+    "file": "sentences.csv"
+  },
+  "tags": ["family", "market", "weekend"]
+}

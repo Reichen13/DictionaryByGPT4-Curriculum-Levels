@@ -234,6 +234,95 @@
       ]
     },
     {
+      "id": "primary-weekend-market",
+      "stage": "primary",
+      "stageLabel": "小学",
+      "title": "A Weekend Market",
+      "subtitle": "小学示范课",
+      "summary": "围绕家庭买菜和颜色、数量表达的小学句子练习。",
+      "duration": 16.381,
+      "video": "./media/study-demo/primary-weekend-market/lesson.mp4",
+      "sentences": [
+        {
+          "id": "primary-weekend-market-sentence-1",
+          "index": 0,
+          "en": "My mother and I buy fresh apples on Saturday.",
+          "zh": "星期六我和妈妈买新鲜的苹果。",
+          "start": 0.0,
+          "end": 4.439,
+          "duration": 4.439,
+          "audio": "./media/study-demo/primary-weekend-market/sentence-01.wav",
+          "tokens": [
+            "My",
+            "mother",
+            "and",
+            "I",
+            "buy",
+            "fresh",
+            "apples",
+            "on",
+            "Saturday"
+          ]
+        },
+        {
+          "id": "primary-weekend-market-sentence-2",
+          "index": 1,
+          "en": "A kind shopkeeper gives me a small orange bag.",
+          "zh": "一位和蔼的店主给了我一个小橙色袋子。",
+          "start": 4.439,
+          "end": 9.328,
+          "duration": 4.889,
+          "audio": "./media/study-demo/primary-weekend-market/sentence-02.wav",
+          "tokens": [
+            "A",
+            "kind",
+            "shopkeeper",
+            "gives",
+            "me",
+            "a",
+            "small",
+            "orange",
+            "bag"
+          ]
+        },
+        {
+          "id": "primary-weekend-market-sentence-3",
+          "index": 2,
+          "en": "We count the tomatoes and carry them home together.",
+          "zh": "我们数了数西红柿，然后一起把它们带回家。",
+          "start": 9.328,
+          "end": 13.902,
+          "duration": 4.574,
+          "audio": "./media/study-demo/primary-weekend-market/sentence-03.wav",
+          "tokens": [
+            "We",
+            "count",
+            "the",
+            "tomatoes",
+            "and",
+            "carry",
+            "them",
+            "home",
+            "together"
+          ]
+        },
+        {
+          "id": "primary-weekend-market-sentence-4",
+          "index": 3,
+          "en": "At lunch",
+          "zh": "I tell my father about the busy market.",
+          "start": 13.902,
+          "end": 16.381,
+          "duration": 2.479,
+          "audio": "./media/study-demo/primary-weekend-market/sentence-04.wav",
+          "tokens": [
+            "At",
+            "lunch"
+          ]
+        }
+      ]
+    },
+    {
       "id": "junior-spring-city",
       "stage": "junior",
       "stageLabel": "初中",
@@ -428,6 +517,103 @@
       ]
     },
     {
+      "id": "junior-community-garden",
+      "stage": "junior",
+      "stageLabel": "初中",
+      "title": "The Community Garden",
+      "subtitle": "初中示范课",
+      "summary": "围绕社区活动、分工合作和植物观察的初中句子练习。",
+      "duration": 19.436,
+      "video": "./media/study-demo/junior-community-garden/lesson.mp4",
+      "sentences": [
+        {
+          "id": "junior-community-garden-sentence-1",
+          "index": 0,
+          "en": "Our community opens a new garden beside the sports center.",
+          "zh": "我们社区在体育中心旁边开了一座新花园。",
+          "start": 0.0,
+          "end": 5.114,
+          "duration": 5.114,
+          "audio": "./media/study-demo/junior-community-garden/sentence-01.wav",
+          "tokens": [
+            "Our",
+            "community",
+            "opens",
+            "a",
+            "new",
+            "garden",
+            "beside",
+            "the",
+            "sports",
+            "center"
+          ]
+        },
+        {
+          "id": "junior-community-garden-sentence-2",
+          "index": 1,
+          "en": "My classmates water the plants while I write the name cards.",
+          "zh": "同学们给植物浇水时，我在写名称卡片。",
+          "start": 5.114,
+          "end": 10.528,
+          "duration": 5.414,
+          "audio": "./media/study-demo/junior-community-garden/sentence-02.wav",
+          "tokens": [
+            "My",
+            "classmates",
+            "water",
+            "the",
+            "plants",
+            "while",
+            "I",
+            "write",
+            "the",
+            "name",
+            "cards"
+          ]
+        },
+        {
+          "id": "junior-community-garden-sentence-3",
+          "index": 2,
+          "en": "An old gardener teaches us how sunlight changes each flower.",
+          "zh": "一位老园丁教我们阳光怎样影响每一种花。",
+          "start": 10.528,
+          "end": 16.067,
+          "duration": 5.539,
+          "audio": "./media/study-demo/junior-community-garden/sentence-03.wav",
+          "tokens": [
+            "An",
+            "old",
+            "gardener",
+            "teaches",
+            "us",
+            "how",
+            "sunlight",
+            "changes",
+            "each",
+            "flower"
+          ]
+        },
+        {
+          "id": "junior-community-garden-sentence-4",
+          "index": 3,
+          "en": "By the end of the afternoon",
+          "zh": "the garden already looks alive.",
+          "start": 16.067,
+          "end": 19.436,
+          "duration": 3.369,
+          "audio": "./media/study-demo/junior-community-garden/sentence-04.wav",
+          "tokens": [
+            "By",
+            "the",
+            "end",
+            "of",
+            "the",
+            "afternoon"
+          ]
+        }
+      ]
+    },
+    {
       "id": "senior-learning-doors",
       "stage": "senior",
       "stageLabel": "高中",
@@ -615,6 +801,104 @@
             "deepen",
             "cultural",
             "understanding"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "senior-future-energy",
+      "stage": "senior",
+      "stageLabel": "高中",
+      "title": "Talking About Future Energy",
+      "subtitle": "高中示范课",
+      "summary": "围绕能源转型、公共表达与论证的高中句子练习。",
+      "duration": 20.666,
+      "video": "./media/study-demo/senior-future-energy/lesson.mp4",
+      "sentences": [
+        {
+          "id": "senior-future-energy-sentence-1",
+          "index": 0,
+          "en": "Our debate team is preparing a speech on future energy choices.",
+          "zh": "我们辩论队正在准备一场关于未来能源选择的演讲。",
+          "start": 0.0,
+          "end": 5.689,
+          "duration": 5.689,
+          "audio": "./media/study-demo/senior-future-energy/sentence-01.wav",
+          "tokens": [
+            "Our",
+            "debate",
+            "team",
+            "is",
+            "preparing",
+            "a",
+            "speech",
+            "on",
+            "future",
+            "energy",
+            "choices"
+          ]
+        },
+        {
+          "id": "senior-future-energy-sentence-2",
+          "index": 1,
+          "en": "One student argues that solar power can reduce pressure on cities.",
+          "zh": "一位同学认为太阳能可以减轻城市压力。",
+          "start": 5.689,
+          "end": 11.558,
+          "duration": 5.869,
+          "audio": "./media/study-demo/senior-future-energy/sentence-02.wav",
+          "tokens": [
+            "One",
+            "student",
+            "argues",
+            "that",
+            "solar",
+            "power",
+            "can",
+            "reduce",
+            "pressure",
+            "on",
+            "cities"
+          ]
+        },
+        {
+          "id": "senior-future-energy-sentence-3",
+          "index": 2,
+          "en": "I focus on how technology and policy must develop at the same time.",
+          "zh": "我重点讨论技术和政策必须同时发展。",
+          "start": 11.558,
+          "end": 17.702,
+          "duration": 6.144,
+          "audio": "./media/study-demo/senior-future-energy/sentence-03.wav",
+          "tokens": [
+            "I",
+            "focus",
+            "on",
+            "how",
+            "technology",
+            "and",
+            "policy",
+            "must",
+            "develop",
+            "at",
+            "the",
+            "same",
+            "time"
+          ]
+        },
+        {
+          "id": "senior-future-energy-sentence-4",
+          "index": 3,
+          "en": "After the discussion",
+          "zh": "our teacher asks us to revise every weak point.",
+          "start": 17.702,
+          "end": 20.666,
+          "duration": 2.964,
+          "audio": "./media/study-demo/senior-future-energy/sentence-04.wav",
+          "tokens": [
+            "After",
+            "the",
+            "discussion"
           ]
         }
       ]

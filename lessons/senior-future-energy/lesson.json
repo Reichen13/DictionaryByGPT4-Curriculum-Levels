@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "senior-future-energy",
+  "stage": "senior",
+  "title": "Talking About Future Energy",
+  "subtitle": "高中示范课",
+  "summary": "围绕能源转型、公共表达与论证的高中句子练习。",
+  "displayOrder": 30,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "csv-import",
+    "file": "sentences.csv"
+  },
+  "tags": ["energy", "presentation", "future"]
+}
