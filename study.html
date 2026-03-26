@@ -279,9 +279,29 @@
       inset: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
       opacity: 0;
       pointer-events: none;
       background: transparent;
+      transition: opacity 180ms ease;
+    }
+
+    .subtitle-stage.is-video-lesson {
+      background: #10211d;
+    }
+
+    .subtitle-stage.is-video-lesson video {
+      opacity: 1;
+    }
+
+    .subtitle-stage.is-video-lesson::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8, 15, 18, 0.24) 0%, rgba(8, 15, 18, 0.52) 58%, rgba(8, 15, 18, 0.82) 100%),
+        linear-gradient(90deg, rgba(8, 15, 18, 0.16) 0%, rgba(8, 15, 18, 0) 28%, rgba(8, 15, 18, 0.18) 100%);
+      z-index: 0;
     }
 
     .subtitle-stage::after {
@@ -298,6 +318,12 @@
       display: grid;
       align-self: end;
       gap: 14px;
+    }
+
+    .subtitle-stage.is-video-lesson .subtitle-card {
+      background: rgba(252, 251, 247, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      box-shadow: 0 20px 36px rgba(5, 12, 16, 0.28);
     }
 
     .subtitle-topline {
@@ -780,6 +806,7 @@
     const lessonStageEl = document.getElementById('lesson-stage');
     const lessonTitleEl = document.getElementById('lesson-title');
     const lessonSummaryEl = document.getElementById('lesson-summary');
+    const subtitleStageEl = document.getElementById('subtitle-stage');
     const subtitlePositionEl = document.getElementById('subtitle-position');
     const subtitleModeEl = document.getElementById('subtitle-mode');
     const subtitleProgressFillEl = document.getElementById('subtitle-progress-fill');
@@ -1345,6 +1372,7 @@
       lessonStageEl.textContent = `${lesson.stageLabel} lesson`;
       lessonTitleEl.textContent = lesson.title;
       lessonSummaryEl.textContent = lesson.summary;
+      subtitleStageEl.classList.toggle('is-video-lesson', lesson.videoMode === 'external-video');
       renderedSubtitleSentenceId = null;
       video.src = lesson.video;
       video.playbackRate = Number(speedSelect.value);

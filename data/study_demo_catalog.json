@@ -49,6 +49,7 @@
       "title": "My School Morning",
       "subtitle": "小学示范课",
       "summary": "用小学阶段高频词做一个早晨上学场景练习。",
+      "videoMode": "generated-slide-video",
       "duration": 17.861,
       "video": "./media/study-demo/primary-school-morning/lesson.mp4",
       "sentences": [
@@ -141,6 +142,7 @@
       "title": "A Rainy Library Day",
       "subtitle": "小学示范课",
       "summary": "围绕下雨天、图书馆和阅读活动设计的基础句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 19.326,
       "video": "./media/study-demo/primary-rainy-library/lesson.mp4",
       "sentences": [
@@ -240,6 +242,7 @@
       "title": "A Weekend Market",
       "subtitle": "小学示范课",
       "summary": "围绕家庭买菜和颜色、数量表达的小学句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 16.381,
       "video": "./media/study-demo/primary-weekend-market/lesson.mp4",
       "sentences": [
@@ -329,6 +332,7 @@
       "title": "Spring in the City",
       "subtitle": "初中示范课",
       "summary": "围绕天气、出行和周末计划做句子学习。",
+      "videoMode": "generated-slide-video",
       "duration": 18.236,
       "video": "./media/study-demo/junior-spring-city/lesson.mp4",
       "sentences": [
@@ -421,6 +425,7 @@
       "title": "Cleaning the River Park",
       "subtitle": "初中示范课",
       "summary": "围绕环保、志愿活动和团队协作组织的初中句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 21.196,
       "video": "./media/study-demo/junior-river-cleanup/lesson.mp4",
       "sentences": [
@@ -523,6 +528,7 @@
       "title": "The Community Garden",
       "subtitle": "初中示范课",
       "summary": "围绕社区活动、分工合作和植物观察的初中句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 19.436,
       "video": "./media/study-demo/junior-community-garden/lesson.mp4",
       "sentences": [
@@ -620,6 +626,7 @@
       "title": "Learning Opens Doors",
       "subtitle": "高中示范课",
       "summary": "围绕学习习惯、自我成长和长期目标组织句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 19.616,
       "video": "./media/study-demo/senior-learning-doors/lesson.mp4",
       "sentences": [
@@ -714,6 +721,7 @@
       "title": "A Visit to the Digital Museum",
       "subtitle": "高中示范课",
       "summary": "围绕科技展览、文化体验和批判性思考设计的高中句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 22.541,
       "video": "./media/study-demo/senior-digital-museum/lesson.mp4",
       "sentences": [
@@ -812,6 +820,7 @@
       "title": "Talking About Future Energy",
       "subtitle": "高中示范课",
       "summary": "围绕能源转型、公共表达与论证的高中句子练习。",
+      "videoMode": "generated-slide-video",
       "duration": 20.666,
       "video": "./media/study-demo/senior-future-energy/lesson.mp4",
       "sentences": [
@@ -910,6 +919,7 @@
       "title": "A Campus Podcast",
       "subtitle": "四级示范课",
       "summary": "基于双语 SRT 字幕导入的四级阶段听说练习，主题是校园播客与学习方法。",
+      "videoMode": "generated-slide-video",
       "duration": 14.8,
       "video": "./media/study-demo/cet4-campus-podcast/lesson.mp4",
       "sentences": [
@@ -1007,6 +1017,7 @@
       "title": "A City Forum Clip",
       "subtitle": "六级示范课",
       "summary": "使用外部视频文件绑定的一节六级阶段练习，主题是城市交通与公共讨论。",
+      "videoMode": "external-video",
       "duration": 24.326,
       "video": "./media/study-demo/cet6-city-forum/forum-clip.mp4",
       "sentences": [

@@ -515,6 +515,7 @@ def build_lessons() -> list[dict[str, Any]]:
             "title": lesson["title"],
             "subtitle": lesson["subtitle"],
             "summary": lesson["summary"],
+            "videoMode": lesson.get("videoMode", "generated-slide-video"),
             "duration": round(current_time, 3),
             "video": f"./media/study-demo/{lesson['id']}/lesson.mp4",
             "sentences": sentences,

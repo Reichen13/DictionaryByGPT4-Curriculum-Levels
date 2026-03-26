@@ -256,6 +256,7 @@ class ExternalVideoLessonBuildTests(unittest.TestCase):
 
             self.assertEqual(len(built), 1)
             lesson = built[0]
+            self.assertEqual(lesson["videoMode"], "external-video")
             self.assertEqual(lesson["video"], "./media/study-demo/cet6-news-clip/clip.mp4")
             copied = media_dir / "cet6-news-clip" / "clip.mp4"
             self.assertTrue(copied.exists())
