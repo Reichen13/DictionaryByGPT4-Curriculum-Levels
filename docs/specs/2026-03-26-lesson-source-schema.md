@@ -181,6 +181,7 @@ lessons/
     - `{"type":"manual"}`
     - `{"type":"csv-import","file":"sentences.csv"}`
     - `{"type":"srt-import","enFile":"subtitles.en.srt","zhFile":"subtitles.zh.srt"}`
+    - `{"type":"manual","video":"clip.mp4"}`
 
 - `tags`
   - array of string

@@ -61,7 +61,7 @@ python scripts/import_lessons.py
 当前 demo 已包含：
 
 - 基于 `lessons/*/lesson.json` 的 lesson 导入链路
-- 支持 `manual`、`csv-import` 和 `srt-import` 三种 lesson 源格式
+- 支持 `manual`、`csv-import`、`srt-import` 和外部视频绑定
 - 本地 lesson 视频播放
 - 逐句定位与单句循环
 - 预生成句子音频
@@ -75,12 +75,14 @@ python scripts/import_lessons.py
 - 初中 3 节
 - 高中 3 节
 - 四级 1 节
+- 六级 1 节
 
 lesson 源格式补充：
 
 - `manual`：直接在 `lesson.json` 里写 `sentences`
 - `csv-import`：在 `lesson.json` 中声明 `source.type = "csv-import"` 和 `source.file`
 - `srt-import`：在 `lesson.json` 中声明 `source.type = "srt-import"`、`source.enFile`、`source.zhFile`
+- `external-video`：把 `videoMode` 设为 `external-video`，并在 `source.video` 中声明本地视频文件
 - 当前 CSV 至少支持列：`id,en,zh`
 - 可选 CSV 列：`start,end,audio,tokens,notes`
 - 当前 SRT 采用中英双文件配对导入，并使用英文字幕的时间轴

@@ -999,6 +999,114 @@
           ]
         }
       ]
+    },
+    {
+      "id": "cet6-city-forum",
+      "stage": "cet6",
+      "stageLabel": "六级",
+      "title": "A City Forum Clip",
+      "subtitle": "六级示范课",
+      "summary": "使用外部视频文件绑定的一节六级阶段练习，主题是城市交通与公共讨论。",
+      "duration": 24.326,
+      "video": "./media/study-demo/cet6-city-forum/forum-clip.mp4",
+      "sentences": [
+        {
+          "id": "cet6-city-forum-sentence-1",
+          "index": 0,
+          "en": "The forum begins with a short report on morning traffic in the city.",
+          "zh": "论坛先用一段简短报告介绍了这座城市的早高峰交通。",
+          "start": 0.0,
+          "end": 5.404,
+          "duration": 5.404,
+          "audio": "./media/study-demo/cet6-city-forum/sentence-01.wav",
+          "tokens": [
+            "The",
+            "forum",
+            "begins",
+            "with",
+            "a",
+            "short",
+            "report",
+            "on",
+            "morning",
+            "traffic",
+            "in",
+            "the",
+            "city"
+          ]
+        },
+        {
+          "id": "cet6-city-forum-sentence-2",
+          "index": 1,
+          "en": "Several speakers argue that safer bike lanes could change daily habits.",
+          "zh": "几位发言者认为，更安全的自行车道会改变人们的日常出行习惯。",
+          "start": 5.404,
+          "end": 11.583,
+          "duration": 6.179,
+          "audio": "./media/study-demo/cet6-city-forum/sentence-02.wav",
+          "tokens": [
+            "Several",
+            "speakers",
+            "argue",
+            "that",
+            "safer",
+            "bike",
+            "lanes",
+            "could",
+            "change",
+            "daily",
+            "habits"
+          ]
+        },
+        {
+          "id": "cet6-city-forum-sentence-3",
+          "index": 2,
+          "en": "Others point out that better buses are still necessary for outer districts.",
+          "zh": "另一些人指出，对于外缘城区来说，更完善的公交系统仍然必不可少。",
+          "start": 11.583,
+          "end": 17.627,
+          "duration": 6.044,
+          "audio": "./media/study-demo/cet6-city-forum/sentence-03.wav",
+          "tokens": [
+            "Others",
+            "point",
+            "out",
+            "that",
+            "better",
+            "buses",
+            "are",
+            "still",
+            "necessary",
+            "for",
+            "outer",
+            "districts"
+          ]
+        },
+        {
+          "id": "cet6-city-forum-sentence-4",
+          "index": 3,
+          "en": "By the end, the audience is invited to submit practical suggestions online.",
+          "zh": "在结束前，主办方邀请观众在线提交切实可行的建议。",
+          "start": 17.627,
+          "end": 24.326,
+          "duration": 6.699,
+          "audio": "./media/study-demo/cet6-city-forum/sentence-04.wav",
+          "tokens": [
+            "By",
+            "the",
+            "end",
+            "the",
+            "audience",
+            "is",
+            "invited",
+            "to",
+            "submit",
+            "practical",
+            "suggestions",
+            "online"
+          ]
+        }
+      ]
     }
   ]
 }

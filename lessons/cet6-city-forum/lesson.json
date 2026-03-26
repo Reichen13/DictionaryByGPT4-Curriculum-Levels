@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cet6-city-forum",
+  "stage": "cet6",
+  "title": "A City Forum Clip",
+  "subtitle": "六级示范课",
+  "summary": "使用外部视频文件绑定的一节六级阶段练习，主题是城市交通与公共讨论。",
+  "displayOrder": 10,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "external-video",
+  "source": {
+    "type": "manual",
+    "video": "forum-clip.mp4"
+  },
+  "tags": ["city", "forum", "transport"],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "The forum begins with a short report on morning traffic in the city.",
+      "zh": "论坛先用一段简短报告介绍了这座城市的早高峰交通。"
+    },
+    {
+      "id": "s2",
+      "en": "Several speakers argue that safer bike lanes could change daily habits.",
+      "zh": "几位发言者认为，更安全的自行车道会改变人们的日常出行习惯。"
+    },
+    {
+      "id": "s3",
+      "en": "Others point out that better buses are still necessary for outer districts.",
+      "zh": "另一些人指出，对于外缘城区来说，更完善的公交系统仍然必不可少。"
+    },
+    {
+      "id": "s4",
+      "en": "By the end, the audience is invited to submit practical suggestions online.",
+      "zh": "在结束前，主办方邀请观众在线提交切实可行的建议。"
+    }
+  ]
+}

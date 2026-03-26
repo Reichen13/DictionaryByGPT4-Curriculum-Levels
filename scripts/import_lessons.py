@@ -454,6 +454,16 @@ def resolve_existing_audio(source_audio: str, lesson_dir: Path, sentence_index: 
     return target_path
 
 
+def resolve_existing_video(source_video: str, lesson_dir: Path, output_dir: Path) -> Path:
+    source_path = (lesson_dir / source_video).resolve()
+    if not source_path.exists():
+        raise FileNotFoundError(f"Video source not found: {source_path}")
+    target_path = output_dir / source_path.name
+    if source_path != target_path.resolve():
+        shutil.copy2(source_path, target_path)
+    return target_path
+
+
 def build_lessons() -> list[dict[str, Any]]:
     built: list[dict[str, Any]] = []
     for lesson_dir, lesson in load_lesson_sources():
@@ -511,9 +521,17 @@ def build_lessons() -> list[dict[str, Any]]:
         }
 
         video_mode = lesson.get("videoMode", "generated-slide-video")
-        if video_mode != "generated-slide-video":
+        if video_mode == "generated-slide-video":
+            create_video(built_lesson, output_dir / "lesson.mp4")
+        elif video_mode == "external-video":
+            source = lesson.get("source") or {}
+            source_video = source.get("video")
+            if not source_video:
+                raise ValueError(f"{lesson_dir / 'lesson.json'} with videoMode external-video must include source.video")
+            resolved_video = resolve_existing_video(source_video, lesson_dir, output_dir)
+            built_lesson["video"] = f"./media/study-demo/{lesson['id']}/{resolved_video.name}"
+        else:
             raise ValueError(f"Unsupported videoMode for {lesson['id']}: {video_mode}")
-        create_video(built_lesson, output_dir / "lesson.mp4")
         built.append(built_lesson)
     return built
 

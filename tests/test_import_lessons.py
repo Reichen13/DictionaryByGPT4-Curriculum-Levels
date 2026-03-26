@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+import wave
 from pathlib import Path
 from unittest import mock
 
@@ -197,6 +198,108 @@ class SrtImportLessonSourceTests(unittest.TestCase):
             with mock.patch.object(import_lessons, "LESSONS_DIR", lessons_dir):
                 with self.assertRaisesRegex(ValueError, "must contain the same number of cues"):
                     import_lessons.load_lesson_sources()
+
+
+class ExternalVideoLessonBuildTests(unittest.TestCase):
+    def _write_silent_wav(self, path: Path, duration_seconds: float = 0.2) -> None:
+        frame_rate = 22050
+        frame_count = int(frame_rate * duration_seconds)
+        with wave.open(str(path), "wb") as handle:
+            handle.setnchannels(1)
+            handle.setsampwidth(2)
+            handle.setframerate(frame_rate)
+            handle.writeframes(b"\x00\x00" * frame_count)
+
+    def test_build_lessons_copies_external_video_asset(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            lessons_dir = root / "lessons"
+            media_dir = root / "media"
+            lesson_dir = lessons_dir / "cet6-news-clip"
+            lesson_dir.mkdir(parents=True)
+
+            (lesson_dir / "lesson.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": 1,
+                        "id": "cet6-news-clip",
+                        "stage": "cet6",
+                        "title": "A News Clip",
+                        "subtitle": "六级示范课",
+                        "summary": "绑定外部视频文件的六级样例。",
+                        "displayOrder": 10,
+                        "audioMode": "recorded-per-sentence",
+                        "videoMode": "external-video",
+                        "source": {"type": "manual", "video": "clip.mp4"},
+                        "sentences": [
+                            {
+                                "id": "s1",
+                                "en": "The report focuses on public transport and clean energy.",
+                                "zh": "这则报道聚焦公共交通和清洁能源。",
+                                "audio": "sentence-1.wav",
+                                "start": 0.0,
+                                "end": 2.4,
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+            (lesson_dir / "clip.mp4").write_bytes(b"fake-mp4-data")
+            self._write_silent_wav(lesson_dir / "sentence-1.wav")
+
+            with mock.patch.object(import_lessons, "LESSONS_DIR", lessons_dir), \
+                mock.patch.object(import_lessons, "LESSON_MEDIA_DIR", media_dir):
+                built = import_lessons.build_lessons()
+
+            self.assertEqual(len(built), 1)
+            lesson = built[0]
+            self.assertEqual(lesson["video"], "./media/study-demo/cet6-news-clip/clip.mp4")
+            copied = media_dir / "cet6-news-clip" / "clip.mp4"
+            self.assertTrue(copied.exists())
+            self.assertEqual(copied.read_bytes(), b"fake-mp4-data")
+
+    def test_build_lessons_rejects_external_video_without_source_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            lessons_dir = root / "lessons"
+            media_dir = root / "media"
+            lesson_dir = lessons_dir / "cet6-broken-video"
+            lesson_dir.mkdir(parents=True)
+
+            (lesson_dir / "lesson.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": 1,
+                        "id": "cet6-broken-video",
+                        "stage": "cet6",
+                        "title": "Broken Video Lesson",
+                        "subtitle": "六级示范课",
+                        "summary": "故意缺少 source.video。",
+                        "displayOrder": 20,
+                        "audioMode": "generated-per-sentence",
+                        "videoMode": "external-video",
+                        "source": {"type": "manual"},
+                        "sentences": [
+                            {
+                                "id": "s1",
+                                "en": "The discussion covers energy policy.",
+                                "zh": "讨论涉及能源政策。",
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            with mock.patch.object(import_lessons, "LESSONS_DIR", lessons_dir), \
+                mock.patch.object(import_lessons, "LESSON_MEDIA_DIR", media_dir):
+                with self.assertRaisesRegex(ValueError, "must include source.video"):
+                    import_lessons.build_lessons()
 
 
 if __name__ == "__main__":
