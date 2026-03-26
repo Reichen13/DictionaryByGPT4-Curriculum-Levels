@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:03,200
+Welcome back to our campus podcast.
+
+2
+00:00:03,200 --> 00:00:06,800
+Today we are talking about study habits and time planning.
+
+3
+00:00:06,800 --> 00:00:10,600
+Many students say short breaks help them stay focused for longer.
+
+4
+00:00:10,600 --> 00:00:14,800
+Before you sleep, try writing tomorrow's three most important tasks.

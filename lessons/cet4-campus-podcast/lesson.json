@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "cet4-campus-podcast",
+  "stage": "cet4",
+  "title": "A Campus Podcast",
+  "subtitle": "四级示范课",
+  "summary": "基于双语 SRT 字幕导入的四级阶段听说练习，主题是校园播客与学习方法。",
+  "displayOrder": 10,
+  "audioMode": "generated-per-sentence",
+  "videoMode": "generated-slide-video",
+  "source": {
+    "type": "srt-import",
+    "enFile": "subtitles.en.srt",
+    "zhFile": "subtitles.zh.srt"
+  },
+  "tags": ["podcast", "campus", "study-skills"]
+}

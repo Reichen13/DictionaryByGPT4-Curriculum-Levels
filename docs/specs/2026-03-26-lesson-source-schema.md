@@ -179,7 +179,8 @@ lessons/
   - 描述 lesson 数据来源
   - 例：
     - `{"type":"manual"}`
-    - `{"type":"srt-import","files":["subtitles.en.srt","subtitles.zh.srt"]}`
+    - `{"type":"csv-import","file":"sentences.csv"}`
+    - `{"type":"srt-import","enFile":"subtitles.en.srt","zhFile":"subtitles.zh.srt"}`
 
 - `tags`
   - array of string

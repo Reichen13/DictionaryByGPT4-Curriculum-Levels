@@ -64,6 +64,11 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "are": {
+    "word": "are",
+    "level": "primary",
+    "brief": "**分析词义:** \"Are\" 是一个动词，用作第二人称单数和所有人称的复数形式的 \"be\" 动词的现在时态。\"be\" 动词具有许多不同的用途，包括指示存在，发生或成为。例如, \"You are my friend.\", \"We are team.\" **列举例句:** 1. You are beautiful. 你很漂亮。 2. They are play"
+  },
   "argues": {
     "word": "argues",
     "level": "extended",
@@ -73,6 +78,11 @@
     "word": "at",
     "level": "primary",
     "brief": "**分析词义** \"At\"是一个英语预词，主要用于表示位置、时间、方式等方面的含义。在表达位置时，一般特指一个具体的地点，例如：at home（在家）；在表示时间上，表示某一特定的时间点，如：at 2 p.m.（下午两点）；在表示方式上，表示以……方式，如：at a high speed（以高速）。 **列举例句** 1. The meeting is at"
+  },
+  "back": {
+    "word": "back",
+    "level": "primary",
+    "brief": "\"Back\" 在英语中有多种用法和含义，它常常被用作名词、动词、形容词、副词等。作为名词，它主要指的是人或动物的身体后部，或者某物的背面或后面。作为动词，它可以指支持或赞成。此外，还可以表示返回或后退。"
   },
   "bag": {
     "word": "bag",
@@ -119,6 +129,11 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "breaks": {
+    "word": "breaks",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "but": {
     "word": "but",
     "level": "primary",
@@ -133,6 +148,11 @@
     "word": "By",
     "level": "primary",
     "brief": "* \"By\" 是一个英语介词，用途非常广泛，基本含义包括“通过”，“由”，“在……旁边”，“不迟于”，等等。"
+  },
+  "campus": {
+    "word": "campus",
+    "level": "senior",
+    "brief": "\"Campus\" 是英语中的一个名词，它的主要意思是“校园”，这是在大学或学院中学校建筑和地点的统称。此外，它也可以用于表示公司或机构的场地。例如，\"Google's campus\" 就是指谷歌公司的公司场地。"
   },
   "can": {
     "word": "can",
@@ -334,6 +354,11 @@
     "level": "junior",
     "brief": "\"Focus\"在英文中有多种含义，最常见的含义是\"关注，专注\"，但也可以表示\"焦点，中心\"等。在光学领域，它也可以表示\"焦点，聚焦点\"。"
   },
+  "focused": {
+    "word": "focused",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "for": {
     "word": "for",
     "level": "primary",
@@ -394,10 +419,20 @@
     "level": "junior",
     "brief": "## 分析词义 \"habit\" 是一个名词，“习惯”或“习性”的意思。 ## 列举例句 1. He has a bad habit of biting his nails. (他有咬指甲的坏习惯。) 2. Good reading habits should be formed while young. (年轻时就应养成良好的阅读习惯。) 3. The mo"
   },
+  "habits": {
+    "word": "habits",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "harmful": {
     "word": "harmful",
     "level": "cet4",
     "brief": "\"Harmful\"是一个形容词，它描述的是某种可以对人、事物或者环境造成损害的状态或者性质。基本上，它本身就带有一种负面的含义。"
+  },
+  "help": {
+    "word": "help",
+    "level": "primary",
+    "brief": "\"Help\" 是一个英语单词，作为动词时，它的意思是“帮助，协助”，例如我帮助他完成作业。作为名词时，它的意思是“帮助，协助”，例如我需要你的帮助。"
   },
   "history": {
     "word": "history",
@@ -423,6 +458,11 @@
     "word": "ideas",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "important": {
+    "word": "important",
+    "level": "junior",
+    "brief": "## 分析词义 \"Important\"是英语中的形容词，常被用来表示\"重要的，严肃的，有影响的\"。 ## 列举例句 1. It's important to eat a balanced diet. (健康饮食非常重要。) 2. Her opinion is very important to me. (对我来说，她的观点很重要。) 3. This jour"
   },
   "in": {
     "word": "In",
@@ -479,10 +519,20 @@
     "level": "primary",
     "brief": "**分析词义** “Library”，这是个名词，指的是公共或私人机构，存储并供读者查阅图书、杂志、音频、视频、电子信息等各种材料的地方。也可指计算机编程中的函数和子程序的集合（程序库）。 **列举例句** 1. She goes to the library every Wednesday. (她每个星期三都去图书馆。) 2. I need to rene"
   },
+  "longer": {
+    "word": "longer",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "lunch": {
     "word": "lunch",
     "level": "primary",
     "brief": "**分析词义** \"Lunch\" 是英语中的一个名词，指的是在中午时分食用的餐点，相当于中文中的“午餐”。 **列举例句** 1. \"Let's meet for lunch at noon.\"（我们中午出来吃个午餐。） 2. \"I packed my daughter's lunch for school.\"（我为我女儿打包了学校的午餐。） 3. \"Wha"
+  },
+  "many": {
+    "word": "many",
+    "level": "primary",
+    "brief": "**分析词义**： \"Many\" 是一个常用的英语量词，主要用于表示数量上的多。相似的词有 \"numerous\", \"a lot of\", \"a great number of\" 发音为 /ˈmɛːni/。 **列举例句**： 1. Many students have already arrived. （许多学生已经到了。） 2. I have made"
   },
   "me": {
     "word": "me",
@@ -498,6 +548,11 @@
     "word": "more",
     "level": "junior",
     "brief": "\"More\" 是一个英语单词，常用作副词或形容词，表示\"更多的\"或\"附加的\"。"
+  },
+  "most": {
+    "word": "most",
+    "level": "junior",
+    "brief": "* \"Most\"是一个英语单词，通常用作形容词或副词，表达最大的或大多数的意思。作为形容词时，它是\"many\", \"much\"的最高级，表示“最多的”。作为副词时，通常加在形容词最高级或副词前，表示最高的程度。"
   },
   "mother": {
     "word": "mother",
@@ -604,6 +659,11 @@
     "level": "junior",
     "brief": "\"Pick\" 是一个非常常见且具有多种含义的英语单词。作为动词，它最常用的意思是“选择”或“挑选”，比如你可以从菜单中挑选你喜爱的食物。另外，“pick”还可以表示“摘取”。例如你可以在果园里摘苹果。作为名词，“pick” 可以表示“精选的人或事”。"
   },
+  "planning": {
+    "word": "planning",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "plans": {
     "word": "plans",
     "level": "extended",
@@ -623,6 +683,11 @@
     "word": "Play",
     "level": "primary",
     "brief": "\"Play\"是一个非常多元的词，在英语中它可以表示动词“玩”，“播放”或“演奏”，也可以作为名词表示“戏剧”，“游戏”等。"
+  },
+  "podcast": {
+    "word": "podcast",
+    "level": "extended",
+    "brief": "No local explanation found yet."
   },
   "policy": {
     "word": "policy",
@@ -739,6 +804,11 @@
     "level": "primary",
     "brief": "\"Sit\" 是个具有广泛应用的动词，表示“坐”的动作，通常用于表示安静的待在椅子或者地面上。"
   },
+  "sleep": {
+    "word": "sleep",
+    "level": "primary",
+    "brief": "\"Sleep\" 的主要含义是\"睡眠\"，是指人类和动物的一种生理状态，使得我们的大脑和身体得以休息和恢复。"
+  },
   "small": {
     "word": "small",
     "level": "primary",
@@ -789,6 +859,11 @@
     "level": "primary",
     "brief": "**分析词义** \"Spring\" 是一个常用的英语单词，它在不同的上下文中有多重含义。它主要有四个基本含义：1）季节（春季）；2）跳跃，跃起；3）泉水，熔炼炉的火力；4）弹簧，发条。例如，\"I love the flowers in spring\" (我喜欢春天的花朵)；\"He sprung up from his seat\" (他从座位上跳了起来)。 *"
   },
+  "stay": {
+    "word": "stay",
+    "level": "junior",
+    "brief": "\"Stay\"是一个英语单词，主要用作动词，意为“保持”，“留下”，\"停留\"或\"居住\"，其特定含义取决于上下文环境。"
+  },
   "steady": {
     "word": "steady",
     "level": "cet4",
@@ -814,6 +889,11 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "study": {
+    "word": "study",
+    "level": "primary",
+    "brief": "分析词义： \"Study\"主要有三个意思：学习，研究，和书房或学习空间。作为动词，它主要指倾注时间和精力去获取知识，而作为名词，它安置我们用于学习或研究的地方。 例句： 1. She goes to the library to study. (她去图书馆学习。) 2. He is conducting a study on climate change."
+  },
   "sun": {
     "word": "sun",
     "level": "primary",
@@ -828,6 +908,16 @@
     "word": "talk",
     "level": "primary",
     "brief": "## 分析词义 \"Talk\" 是英语中一个非常常用的单词，常用作动词和名词。作为动词时，\"talk\" 的意思是说话，交谈。作为名词时，\"talk\" 可以指谈话，谈论或讲话。 ## 列举例句 1. \"Let's talk about it\" - 我们来谈谈这个问题。 2. \"She gave a talk at the conference\" - 她在会议上发"
+  },
+  "talking": {
+    "word": "talking",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
+  "tasks": {
+    "word": "tasks",
+    "level": "extended",
+    "brief": "No local explanation found yet."
   },
   "teacher": {
     "word": "teacher",
@@ -879,6 +969,11 @@
     "level": "primary",
     "brief": "\"this\" 是一个英语指示代词，通常用于指代距离说话人较近的人或物。例如，人们通常使用 \"this\" 来谈论他们正在谈论的事物，或者他们能看到和触摸的事物。"
   },
+  "three": {
+    "word": "three",
+    "level": "primary",
+    "brief": "**分析词义** \"Three\"是一个基本的英语词汇，表示数目\"3\"，用于数物品或事件。 **列举例句** 1. \"I have three apples.\" （我有三个苹果。） 2. \"There are three days left before the trip.\" （离旅行还有三天。） 3. \"She scored three points in"
+  },
   "through": {
     "word": "through",
     "level": "junior",
@@ -899,6 +994,11 @@
     "level": "primary",
     "brief": "\"To\"是英语中常用的介词之一，常常用于表示方向、传递、比较等。例如，“Go to school”其中的\"to\"表示去学校的方向；\"Give it to me\"中的\"to\"表示把东西传给我。"
   },
+  "today": {
+    "word": "today",
+    "level": "primary",
+    "brief": "\"Today\" 是副词和名词，用来表示“今天”或“现在”。"
+  },
   "together": {
     "word": "together",
     "level": "junior",
@@ -909,10 +1009,20 @@
     "level": "extended",
     "brief": "No local explanation found yet."
   },
+  "tomorrows": {
+    "word": "tomorrows",
+    "level": "extended",
+    "brief": "No local explanation found yet."
+  },
   "travel": {
     "word": "travel",
     "level": "extended",
     "brief": "No local explanation found yet."
+  },
+  "try": {
+    "word": "try",
+    "level": "primary",
+    "brief": "## 分析词义 \"Try\" 是一个动词，具有几种不同的含义。首先，它通常指尝试去做某事，特别是您不确定是否能成功。其次，它也可以表示努力克服或处理某一困难或问题。最后，它可以指在法律场合中对某人或某案件进行审判。 ## 列举例句 1. \"I will try to finish the work by tomorrow.\" - 我会尽力明天完成这项工作。 2"
   },
   "umbrella": {
     "word": "umbrella",
@@ -984,6 +1094,11 @@
     "level": "junior",
     "brief": "\"weekend\" 是一个名词，指的是一个星期的最后两天，通常是星期六和星期日。在大多数文化中，周末被视为休息和娱乐的时间。"
   },
+  "welcome": {
+    "word": "welcome",
+    "level": "primary",
+    "brief": "**分析词义** “Welcome”是一个常见的英语单词，作为形容词使用时，它指的是\"受欢迎的\"，或者\"愉快的\"；作为动词，它的意思是\"欢迎\"或者\"接待\"。此外，“welcome”也可以作为词组\"you're welcome\"的一部分，这是对\"thank you\"的一种常见回答。 **列举例句** 1. As a verb: \"They welcomed t"
+  },
   "while": {
     "word": "while",
     "level": "junior",
@@ -1013,6 +1128,11 @@
     "word": "write",
     "level": "primary",
     "brief": "\"Write\"这个单词是一个动词，是指在纸上、电脑或者其他介质上用文字记录下来，可以是信、文章、书、诗等等。它的基本含义是\"写\"。"
+  },
+  "writing": {
+    "word": "writing",
+    "level": "cet4",
+    "brief": "**分析词义**： \"Writing\"在英语语境中主要有两种含义，一种是\"书写\"或者\"写作”，另一种是指“文字”或“作品”。比如说，“I love writing” (我喜欢写作)，或者“He has a unique style of writing” (他有独特的写作风格). **列举例句**： 1. \"His writing is heavily in"
   },
   "you": {
     "word": "you",

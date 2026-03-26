@@ -28,6 +28,9 @@ WIDTH = 1280
 HEIGHT = 720
 SENTENCE_GAP_SECONDS = 0.9
 STAGE_PRIORITY = ["primary", "junior", "senior", "cet4", "cet6", "advanced", "extended"]
+SRT_TIMECODE_RE = re.compile(
+    r"(?P<start>\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(?P<end>\d{2}:\d{2}:\d{2}[,.]\d{3})"
+)
 
 STAGE_META = {
     "primary": {"label": "小学", "color": (84, 146, 112), "accent": "#549270"},
@@ -259,6 +262,61 @@ def optional_float(value: str | None) -> float | None:
     return float(stripped)
 
 
+def parse_srt_timestamp(value: str) -> float:
+    normalized = value.replace(",", ".")
+    hours, minutes, seconds = normalized.split(":")
+    return round(int(hours) * 3600 + int(minutes) * 60 + float(seconds), 3)
+
+
+def compact_subtitle_text(lines: list[str]) -> str:
+    text = " ".join(line.strip() for line in lines if line.strip())
+    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"(?<=[\u4e00-\u9fff])\s+(?=[\u4e00-\u9fff])", "", text)
+    return text
+
+
+def parse_srt_cues(path: Path) -> list[dict[str, Any]]:
+    raw = path.read_text(encoding="utf-8-sig")
+    normalized = raw.replace("\r\n", "\n").replace("\r", "\n").strip()
+    if not normalized:
+        raise ValueError(f"{path} is empty")
+
+    blocks = re.split(r"\n\s*\n", normalized)
+    cues: list[dict[str, Any]] = []
+
+    for block_index, block in enumerate(blocks, start=1):
+        lines = [line.strip() for line in block.split("\n") if line.strip()]
+        if not lines:
+            continue
+
+        if len(lines) >= 2 and lines[0].isdigit():
+            timing_line = lines[1]
+            text_lines = lines[2:]
+        else:
+            timing_line = lines[0]
+            text_lines = lines[1:]
+
+        match = SRT_TIMECODE_RE.fullmatch(timing_line)
+        if not match:
+            raise ValueError(f"{path} cue {block_index} has invalid timecode: {timing_line}")
+        text = compact_subtitle_text(text_lines)
+        if not text:
+            raise ValueError(f"{path} cue {block_index} does not contain subtitle text")
+
+        cues.append(
+            {
+                "id": f"s{len(cues) + 1}",
+                "start": parse_srt_timestamp(match.group("start")),
+                "end": parse_srt_timestamp(match.group("end")),
+                "text": text,
+            }
+        )
+
+    if not cues:
+        raise ValueError(f"{path} does not contain any valid subtitle cues")
+    return cues
+
+
 def load_csv_sentences(lesson_dir: Path, source: dict[str, Any]) -> list[dict[str, Any]]:
     source_file = source.get("file")
     if not source_file:
@@ -316,6 +374,38 @@ def load_csv_sentences(lesson_dir: Path, source: dict[str, Any]) -> list[dict[st
     return sentences
 
 
+def load_srt_sentences(lesson_dir: Path, source: dict[str, Any]) -> list[dict[str, Any]]:
+    en_file = source.get("enFile")
+    zh_file = source.get("zhFile")
+    if not en_file or not zh_file:
+        raise ValueError(f"{lesson_dir / 'lesson.json'} srt-import source must include enFile and zhFile")
+
+    en_path = lesson_dir / en_file
+    zh_path = lesson_dir / zh_file
+    if not en_path.exists():
+        raise FileNotFoundError(f"SRT source not found: {en_path}")
+    if not zh_path.exists():
+        raise FileNotFoundError(f"SRT source not found: {zh_path}")
+
+    en_cues = parse_srt_cues(en_path)
+    zh_cues = parse_srt_cues(zh_path)
+    if len(en_cues) != len(zh_cues):
+        raise ValueError(f"{lesson_dir / 'lesson.json'} bilingual SRT files must contain the same number of cues")
+
+    sentences: list[dict[str, Any]] = []
+    for index, (en_cue, zh_cue) in enumerate(zip(en_cues, zh_cues), start=1):
+        sentences.append(
+            {
+                "id": f"s{index}",
+                "en": en_cue["text"],
+                "zh": zh_cue["text"],
+                "start": en_cue["start"],
+                "end": en_cue["end"],
+            }
+        )
+    return sentences
+
+
 def materialize_lesson_source(lesson: dict[str, Any], lesson_dir: Path) -> dict[str, Any]:
     source = lesson.get("source") or {"type": "manual"}
     source_type = source.get("type", "manual")
@@ -325,6 +415,9 @@ def materialize_lesson_source(lesson: dict[str, Any], lesson_dir: Path) -> dict[
         return materialized
     if source_type == "csv-import":
         materialized["sentences"] = load_csv_sentences(lesson_dir, source)
+        return materialized
+    if source_type == "srt-import":
+        materialized["sentences"] = load_srt_sentences(lesson_dir, source)
         return materialized
 
     raise ValueError(f"{lesson_dir / 'lesson.json'} has unsupported source.type: {source_type}")
