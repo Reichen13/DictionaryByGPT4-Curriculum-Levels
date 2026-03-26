@@ -822,6 +822,7 @@
     let subtitleWordSpans = [];
     let subtitleWordRanges = [];
     let renderedSubtitleSentenceId = null;
+    let activeSubtitleDriver = null;
 
     const STORAGE_KEY = 'study-demo-settings-v1';
 
@@ -883,6 +884,19 @@
       const baseRate = Number(voiceRateRange.value || 1);
       const speedRate = Number(speedSelect.value || 1);
       return clamp(baseRate * speedRate, 0.7, 1.8);
+    }
+
+    function clearSubtitleDriver() {
+      activeSubtitleDriver = null;
+    }
+
+    function estimateTtsDurationMs(sentence) {
+      if (!sentence) return 0;
+      return Math.max(400, (Number(sentence.duration || 0) * 1000) / Math.max(0.5, currentSpeechRate()));
+    }
+
+    function setSubtitleDriver(driver) {
+      activeSubtitleDriver = driver;
     }
 
     function loadSettings() {
@@ -1009,6 +1023,7 @@
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
+      clearSubtitleDriver();
     }
 
     function currentSentence() {
@@ -1063,7 +1078,19 @@
       const sentence = currentSentence();
       if (!sentence) return;
 
-      const progress = sentenceProgressAtTime(sentence, video.currentTime || 0);
+      let progress = sentenceProgressAtTime(sentence, video.currentTime || 0);
+      if (activeSubtitleDriver && activeSubtitleDriver.sentenceId === sentence.id) {
+        if (activeSubtitleDriver.type === 'audio' && activeSubtitleDriver.audio) {
+          const audio = activeSubtitleDriver.audio;
+          const duration = Number.isFinite(audio.duration) && audio.duration > 0
+            ? audio.duration
+            : Math.max(0.001, Number(sentence.duration || 0));
+          progress = clamp(audio.currentTime / duration, 0, 1);
+        } else if (activeSubtitleDriver.type === 'tts') {
+          const elapsed = performance.now() - activeSubtitleDriver.startedAt;
+          progress = clamp(elapsed / Math.max(1, activeSubtitleDriver.durationMs), 0, 1);
+        }
+      }
       subtitleProgressFillEl.style.width = `${(progress * 100).toFixed(1)}%`;
 
       subtitleWordSpans.forEach((span, index) => {
@@ -1100,15 +1127,45 @@
         utterance.rate = currentSpeechRate();
         utterance.pitch = Number(voicePitchRange.value);
         utterance.volume = 1;
+        setSubtitleDriver({
+          type: 'tts',
+          sentenceId: sentence.id,
+          startedAt: performance.now(),
+          durationMs: estimateTtsDurationMs(sentence),
+        });
+        utterance.onend = () => {
+          if (activeSubtitleDriver?.sentenceId === sentence.id) {
+            clearSubtitleDriver();
+            updateSubtitleProgress();
+          }
+        };
+        utterance.onerror = () => {
+          if (activeSubtitleDriver?.sentenceId === sentence.id) {
+            clearSubtitleDriver();
+            updateSubtitleProgress();
+          }
+        };
         window.speechSynthesis.speak(utterance);
       } else {
         const audio = lessonAudioMap.get(sentence.id);
         if (!audio) return;
         audio.currentTime = 0;
         audio.playbackRate = Number(speedSelect.value || 1);
+        setSubtitleDriver({
+          type: 'audio',
+          sentenceId: sentence.id,
+          audio,
+        });
+        audio.onended = () => {
+          if (activeSubtitleDriver?.sentenceId === sentence.id) {
+            clearSubtitleDriver();
+            updateSubtitleProgress();
+          }
+        };
         audio.play().catch(() => {});
       }
       lastAnnouncedSentenceId = sentence.id;
+      updateSubtitleProgress();
     }
 
     function renderWordDetail(wordKey) {
@@ -1407,9 +1464,12 @@
     speedSelect.addEventListener('change', () => {
       video.playbackRate = Number(speedSelect.value);
       updateSubtitleModeLabel();
+      stopAllSentenceAudio();
       if (autoSentenceAudio && !video.paused) {
         lastAnnouncedSentenceId = null;
         speakSentence(currentSentence());
+      } else {
+        updateSubtitleProgress();
       }
     });
 
@@ -1422,6 +1482,7 @@
     voiceSelect.addEventListener('change', saveSettings);
     voiceRateRange.addEventListener('input', () => {
       updateSubtitleModeLabel();
+      stopAllSentenceAudio();
       saveSettings();
     });
     voicePitchRange.addEventListener('input', saveSettings);
@@ -1437,6 +1498,8 @@
 
     timelineRange.addEventListener('input', () => {
       if (!currentLesson) return;
+      stopAllSentenceAudio();
+      lastAnnouncedSentenceId = null;
       const ratio = Number(timelineRange.value) / 1000;
       video.currentTime = ratio * (video.duration || currentLesson.duration);
       syncFromVideoTime();
@@ -1450,7 +1513,9 @@
     });
 
     video.addEventListener('pause', () => {
+      stopAllSentenceAudio();
       playBtn.textContent = '播放';
+      updateSubtitleProgress();
     });
 
     video.addEventListener('loadedmetadata', () => {
