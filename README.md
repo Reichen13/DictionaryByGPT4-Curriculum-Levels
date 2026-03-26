@@ -2,6 +2,8 @@
 
 基于正式课标重新分级的开源单词书整理版。
 
+![Social Preview](./images/social-preview.png)
+
 [在线访问（GitHub Pages）](https://reichen13.github.io/DictionaryByGPT4-Curriculum-Levels/)
 
 ## 项目简介
